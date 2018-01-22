@@ -1,0 +1,17 @@
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project</title>
+  </head>
+  <body>
+    <p><i>Python {{ python_version }}</i></p>
+    <p><i>Django {{ django_version }}</i></p>
+    <p><i>Django REST Framework {{ drf_version }}</i></p>
+    <div id="root"></div> 
+    
+    {% render_bundle 'mainifest' %}
+    {% render_bundle 'main' %}
+  </body>
+</html>
+
