@@ -1,74 +1,89 @@
-import * as auth from '../actions/auth'
+import { Map } from 'immutable';
 
-const initialState = {
-  access: undefined,
-  refresh: undefined,
-  errors: {},
-}
+import {
+    LOAD_REQUEST
+    LOAD_SUCCESS
+    LOAD_FAIL
 
-export default (state=initialState, action) => {
-  switch(action.type) {
-    case auth.LOGIN_SUCCESS:
-      return {
-        access: {
+    LOGIN_REQUEST
+    LOGIN_SUCCESS
+    LOGIN_FAIL
+    
+    LOGOUT_REQUEST
+    LOGOUT_SUCCESS
+    LOGOUT_FAIL
+} from 'actions/auth';
+
+const initialState = Map({
+  asyncLoading: false,
+  asyncError: null,
+  asyncData: null,
+});
+
+const actionsMap = {
+  [LOAD_REQUEST]: (state) => {
+    return state.merge(Map({
+      asyncLoading: true,
+      asyncError: null,
+      asyncData: null,
+    }));
+  },
+  [LOAD_FAIL]: (state, action) => {
+    return state.merge(Map({
+      asyncLoading: false,
+      asyncError: action.error.message,
+    }));
+  },
+  [LOAD_SUCCESS]: (state, action) => {
+      return state.merge(Map({
+        asyncLoading: false,
+        asyncData: action.data,
+      }));
+    },
+  [LOGIN_REQUEST]: (state) => {
+    return state.merge(Map({
+      asyncLoading: true,
+      asyncError: null,
+      asyncData: null,
+    }));
+  },
+  [LOGIN_FAIL]: (state, action) => {
+    return state.merge(Map({
+      asyncLoading: false,
+      asyncError: action.error.message,
+    }));
+  },
+  [LOGIN_SUCCESS]: (state, action) => {
+      return state.merge(Map({
+        asyncLoading: false,
+        asyncData:{
           token: action.data,
           ...(action.data)
         },
-        refresh: {
-          token: action.data,
-          ...jwtDecode(action.data)
-        },
-        errors: {}
-    }
-    case auth.TOKEN_RECEIVED:
-      return {
-        ...state,
-        access: {
-          token: action.payload.access,
-          ...jwtDecode(action.payload.access)
-        }
-      }
-    case auth.LOGIN_FAILURE:
-    case auth.TOKEN_FAILURE:
-      return {
-         access: undefined,
-         refresh: undefined,
-         errors: 
-             action.payload.response || 
-                {'non_field_errors': action.payload.statusText},
-      }
-    default:
-      return state
-    }
-}
+      }));
+    },
+  [LOGOUT_REQUEST]: (state) => {
+    return state.merge(Map({
+      asyncLoading: true,
+      asyncError: null,
+      asyncData: null,
+    }));
+  },
+  [LOGOUT_FAIL]: (state, action) => {
+    return state.merge(Map({
+      asyncLoading: false,
+      asyncError: action.error.message,
+    }));
+  },
+  [LOGOUT_SUCCESS]: (state, action) => {
+      return state.merge(Map({
+        asyncLoading: false,
+        asyncData: action.data,
+      }));
+    },
+  };
 
-export function accessToken(state) {
-    if (state.access) {
-        return  state.access.token
-    }
-}
-    
-export function refreshToken(state) {
-    if (state.refresh) {
-        return  state.refresh.token
-    }
-}
-    
-export function isAccessTokenExpired(state) {
-  if (state.access && state.access.exp) {
-    return 1000 * state.access.exp - (new Date()).getTime() < 5000
-  }
-  return true
-}
-export function isRefreshTokenExpired(state) {
-  if (state.refresh && state.refresh.exp) {
-    return 1000 * state.refresh.exp - (new Date()).getTime() < 5000
-  }
-  return true
-}
-export function isAuthenticated(state) {
-  return !isRefreshTokenExpired(state)
-}
-export function errors(state) {
-   return  state.errors
+export default function reducer(state = initialState, action = {}) {
+  const fn = actionsMap[action.type];
+  return fn ? fn(state, action) : state;
 }
