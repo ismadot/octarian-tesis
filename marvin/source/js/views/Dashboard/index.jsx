@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { testAction, testAsync } from 'actions/app';
+import { login } from 'actions/auth';
 import CircleSvg from '../../../assets/svg/circle.svg';
 import SquareSvg from '../../../assets/svg/square.svg';
 import TriangleSvg from '../../../assets/svg/triangle.svg';
@@ -11,6 +12,9 @@ import bookImg from '../../../assets/img/book2.jpg';
   asyncData: state.app.get('asyncData'),
   asyncError: state.app.get('asyncError'),
   asyncLoading: state.app.get('asyncLoading'),
+  asyncDataAuth: state.auth.get('asyncData'),
+  asyncErrorAuth: state.auth.get('asyncError'),
+  asyncLoadingAuth: state.auth.get('asyncLoading'),
   counter: state.app.get('counter'),
 }))
 export default class Dashboard extends Component {
@@ -28,6 +32,7 @@ export default class Dashboard extends Component {
 
     this.handleAsyncButtonClick = this.handleAsyncButtonClick.bind(this);
     this.handleTestButtonClick = this.handleTestButtonClick.bind(this);
+    this.handleTestLoginButtonClick = this.handleTestLoginButtonClick.bind(this);
   }
 
   handleAsyncButtonClick() {
@@ -41,12 +46,20 @@ export default class Dashboard extends Component {
 
     dispatch(testAction());
   }
+  handleTestLoginButtonClick(){
+    const { dispatch } = this.props;
+
+    dispatch(login('isma','ismael.23'));
+  }
 
   render() {
     const {
       asyncData,
       asyncError,
       asyncLoading,
+      asyncDataAuth,
+      asyncErrorAuth,
+      asyncLoadingAuth,
       counter,
     } = this.props;
 
@@ -66,6 +79,23 @@ export default class Dashboard extends Component {
           <p>Counter: { counter }</p>
           <button onClick={ this.handleTestButtonClick }>
             Increase
+          </button>
+        </div>
+        
+        <h3>Get Token</h3>
+        <div className='Example'>
+          <p></p>
+            
+          { asyncData &&
+            <p>
+              Date: { asyncData.token }<br />
+            </p> }  
+          { asyncLoadingAuth && <p>Loading...</p> }
+          { asyncErrorAuth && <p>Error: { asyncErrorAuth }</p> }
+          <button
+            disabled={ asyncLoadingAuth }
+            onClick={ this.handleTestLoginButtonClick }>
+          Token
           </button>
         </div>
 

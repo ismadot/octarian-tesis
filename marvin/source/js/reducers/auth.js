@@ -1,17 +1,17 @@
 import { Map } from 'immutable';
 
 import {
-    LOAD_REQUEST
-    LOAD_SUCCESS
-    LOAD_FAIL
+    LOAD_REQUEST,
+    LOAD_SUCCESS,
+    LOAD_FAIL,
 
-    LOGIN_REQUEST
-    LOGIN_SUCCESS
-    LOGIN_FAIL
+    LOGIN_REQUEST,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL,
     
-    LOGOUT_REQUEST
-    LOGOUT_SUCCESS
-    LOGOUT_FAIL
+    LOGOUT_REQUEST,
+    LOGOUT_SUCCESS,
+    LOGOUT_FAIL,
 } from 'actions/auth';
 
 const initialState = Map({
@@ -56,12 +56,9 @@ const actionsMap = {
   [LOGIN_SUCCESS]: (state, action) => {
       return state.merge(Map({
         asyncLoading: false,
-        asyncData:{
-          token: action.data,
-          ...(action.data)
-        },
+        asyncData:action.data,
       }));
-    },
+  },
   [LOGOUT_REQUEST]: (state) => {
     return state.merge(Map({
       asyncLoading: true,

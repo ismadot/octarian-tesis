@@ -40,9 +40,9 @@ export function load() {
 
 export function login(username, password) {
 return (dispatch) => {
-     dispatch({type: LOGIN_REQUEST, {username, password},{methodo='POST'}}});
+     dispatch({type: LOGIN_REQUEST,username, password});
 
-     api.backend('/token-auth/',{username, password},{methodo='POST'})
+     api.backend('token-auth/',{username, password},{method:'POST'})
      .then(data => dispatch({type: LOGIN_SUCCESS, data}))
      .catch(error => dispatch({type: LOGIN_FAIL, error}));
   }
@@ -60,9 +60,9 @@ export function logout() {
 
 export function refreshAccessToken(token) {
   return (dispatch) => {
-    dispatch({type: TOKEN_REQUEST, {token}, {methodo='POST'}}});
+    dispatch({type: TOKEN_REQUEST, token});
 
-    api.backend('/token-refresh/',{token},{methodo='POST'})
+    api.backend('/token-refresh/',{token},{methodo:'POST'})
     .then(data => dispatch({type: TOKEN_SUCCESS, data}))
     .catch(error => dispatch({type: TOKEN_FAIL, error}));
   };
