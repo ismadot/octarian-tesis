@@ -19,16 +19,21 @@ function backend(url , data={}, params={}) {
           'Content-Type': 'application/json'
         },
         body:JSON.stringify(data),
-      }).then(response => {response.json()});
+      }).then(response => response.json());
 }
 
-/*function getAuthToken(url, data = {}) {
-  return axios.post(BASE_URL+url,{
-    body:JSON.stringify(data),
-  }).then((response) => {response.json()});
-}*/
+function backendgetAuthToken(url, data = {}, params = {}) {
+  return axios(BASE_URL+url, {
+    ...params,
+    headers: {
+        'Accept': "application/json;ident=4",
+        'Content-Type': 'application/json'
+      },
+    data,
+  });
+}
 export default {
   testAsync,
   backend,
-  //backendgetAuthToken,
+  backendgetAuthToken,
 };

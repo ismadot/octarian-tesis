@@ -37,7 +37,7 @@ const actionsMap = {
   [LOGIN_SUCCESS]: (state, action) => {
       return state.merge(Map({
         asyncLoadingAuth: false,
-        asyncDataAuth:action.data,
+        asyncDataAuth:action.data.data,
       }));
   },
   [LOAD_REQUEST]: (state) => {
@@ -73,6 +73,7 @@ const actionsMap = {
     }));
   },
   [LOGOUT_SUCCESS]: (state, action) => {
+    console.log(action.data);
       return state.merge(Map({
         asyncLoading: false,
         asyncData: action.data,

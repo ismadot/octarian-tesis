@@ -12,9 +12,9 @@ import bookImg from '../../../assets/img/book2.jpg';
   asyncData: state.app.get('asyncData'),
   asyncError: state.app.get('asyncError'),
   asyncLoading: state.app.get('asyncLoading'),
-  asyncDataAuth: state.auth.get('asyncDataAuth'),
-  asyncErrorAuth: state.auth.get('asyncErrorAuth'),
-  asyncLoadingAuth: state.auth.get('asyncLoadingAuth'),
+  asyncDataAuth: state.app.get('asyncDataAuth'),
+  asyncErrorAuth: state.app.get('asyncErrorAuth'),
+  asyncLoadingAuth: state.app.get('asyncLoadingAuth'),
   counter: state.app.get('counter'),
 }))
 export default class Dashboard extends Component {
@@ -22,6 +22,11 @@ export default class Dashboard extends Component {
     asyncData: PropTypes.object,
     asyncError: PropTypes.string,
     asyncLoading: PropTypes.bool,
+    
+    asyncDataAuth: PropTypes.object,
+    asyncErrorAuth: PropTypes.string,
+    asyncLoadingAuth: PropTypes.bool,
+    
     counter: PropTypes.number,
     // from react-redux connect
     dispatch: PropTypes.func,
@@ -76,6 +81,7 @@ export default class Dashboard extends Component {
 
         <h3>Synchronous action</h3>
         <div className='Example'>
+            {counter}
           <p>Counter: { counter }</p>
           <button onClick={ this.handleTestButtonClick }>
             Increase
@@ -84,11 +90,9 @@ export default class Dashboard extends Component {
         
         <h3>Get Token</h3>
         <div className='Example'>
-          <p></p>
-            
-          { asyncData &&
+          { asyncDataAuth &&
             <p>
-              Date: { asyncDataAuth }<br />
+            { asyncDataAuth.token }<br />
             </p> }  
           { asyncLoadingAuth && <p>Loading...</p> }
           { asyncErrorAuth && <p>Error: { asyncErrorAuth }</p> }
