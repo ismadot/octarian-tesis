@@ -12,9 +12,9 @@ import bookImg from '../../../assets/img/book2.jpg';
   asyncData: state.app.get('asyncData'),
   asyncError: state.app.get('asyncError'),
   asyncLoading: state.app.get('asyncLoading'),
-  asyncDataAuth: state.auth.get('asyncData'),
-  asyncErrorAuth: state.auth.get('asyncError'),
-  asyncLoadingAuth: state.auth.get('asyncLoading'),
+  asyncDataAuth: state.auth.get('asyncDataAuth'),
+  asyncErrorAuth: state.auth.get('asyncErrorAuth'),
+  asyncLoadingAuth: state.auth.get('asyncLoadingAuth'),
   counter: state.app.get('counter'),
 }))
 export default class Dashboard extends Component {
@@ -88,7 +88,7 @@ export default class Dashboard extends Component {
             
           { asyncData &&
             <p>
-              Date: { asyncData.token }<br />
+              Date: { asyncDataAuth }<br />
             </p> }  
           { asyncLoadingAuth && <p>Loading...</p> }
           { asyncErrorAuth && <p>Error: { asyncErrorAuth }</p> }

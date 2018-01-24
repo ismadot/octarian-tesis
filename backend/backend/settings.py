@@ -34,7 +34,8 @@ THIRD_PARTY_APPS = (
     'rest_framework',
     'rest_framework_jwt',
     'rest_framework_json_api',
-    'webpack_loader'
+    'corsheaders',
+    'webpack_loader',
 )
 
 LOCAL_APPS = (
@@ -44,15 +45,21 @@ LOCAL_APPS = (
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
-MIDDLEWARE = [
+
+MIDDLEWARE_THIRD_PARTY_APPS=[
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+MIDDLEWARE= [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    
+]+MIDDLEWARE_THIRD_PARTY_APPS
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -79,30 +86,31 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 APPEND_SLASH = False
 
 REST_FRAMEWORK = {
-    # init ----json api package
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework_json_api.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ),
+    #init ----json api package
+    #'DEFAULT_RENDERER_CLASSES': (
+    #    'rest_framework_json_api.renderers.JSONRenderer',
+    #    'rest_framework.renderers.BrowsableAPIRenderer',
+    #),
     # 'PAGE_SIZE': 10,  
     # 'DEFAULT_PAGINATION_CLASS':
     #     'rest_framework_json_api.pagination.PageNumberPagination', 
-    'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
-    'DEFAULT_PARSER_CLASSES': (
-        'rest_framework_json_api.parsers.JSONParser',
-        'rest_framework.parsers.FormParser',
-        'rest_framework.parsers.MultiPartParser'
-    ),
-    # end ---json api package
+    #'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
+    #'DEFAULT_PARSER_CLASSES': (
+    #    'rest_framework_json_api.parsers.JSONParser',
+    #    'rest_framework.parsers.FormParser',
+    #    'rest_framework.parsers.MultiPartParser'
+    #),
+    #'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
+    # end ---json api package 
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        #'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ),
-    'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
 }
 
 WEBPACK_LOADER = {
@@ -119,14 +127,19 @@ WEBPACK_LOADER = {
 JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
     'rest_framework_jwt.utils.jwt_encode_handler',
+    
     'JWT_DECODE_HANDLER':
     'rest_framework_jwt.utils.jwt_decode_handler',
+    
     'JWT_PAYLOAD_HANDLER':
     'rest_framework_jwt.utils.jwt_payload_handler',
+    
     'JWT_PAYLOAD_GET_USER_ID_HANDLER':
     'rest_framework_jwt.utils.jwt_get_user_id_from_payload_handler',
+    
     'JWT_RESPONSE_PAYLOAD_HANDLER':
     'rest_framework_jwt.utils.jwt_response_payload_handler',
+    
     'JWT_SECRET_KEY': SECRET_KEY,
     'JWT_PUBLIC_KEY': None,
     'JWT_PRIVATE_KEY': None,

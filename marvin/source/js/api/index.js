@@ -1,4 +1,5 @@
 import promisePolyfill from 'es6-promise';
+import axios from 'axios';
 import 'isomorphic-fetch';
 
 promisePolyfill.polyfill();
@@ -15,14 +16,19 @@ function backend(url , data={}, params={}) {
         ...params,
         headers: {
           'Accept': "application/json;ident=4",
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body:JSON.stringify(data),
-      })
-    .then((response) => {response.json()});
+      }).then(response => {response.json()});
 }
 
+/*function getAuthToken(url, data = {}) {
+  return axios.post(BASE_URL+url,{
+    body:JSON.stringify(data),
+  }).then((response) => {response.json()});
+}*/
 export default {
   testAsync,
   backend,
+  //backendgetAuthToken,
 };

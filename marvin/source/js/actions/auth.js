@@ -4,9 +4,9 @@ export const LOAD_REQUEST = 'auth/LOAD_REQUEST';
 export const LOAD_SUCCESS = 'auth/LOAD_SUCCESS';
 export const LOAD_FAIL    = 'auth/LOAD_FAIL';
 
-export const LOGIN_REQUEST = 'auth/LOGIN_REQUEST';
-export const LOGIN_SUCCESS = 'auth/LOGIN_SUCCESS';
-export const LOGIN_FAIL   = 'auth/LOGIN_FAIL';
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL    = 'LOGIN_FAIL';
 
 export const LOGOUT_REQUEST = 'auth/LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'auth/LOGOUT_SUCCESS';
@@ -28,6 +28,16 @@ export function isLoaded(globalState) {
   return globalState.auth && globalState.auth.loaded;
 }
 
+export function login(username, password) {
+  return (dispatch) => {
+     dispatch({type: LOGIN_REQUEST});
+
+     api.backend('token-auth/',{username, password},{method:'POST'})
+     .then(data => dispatch({type: LOGIN_SUCCESS, data}))
+     .catch(error => dispatch({type: LOGIN_FAIL, error}));
+  }
+}
+
 export function load() {
   return (dispatch) => {
      dispatch({type: LOAD_REQUEST});
@@ -35,16 +45,6 @@ export function load() {
      api.backend('/load/')
      .then(data => dispatch({type: LOAD_SUCCESS, data}))
      .catch(error => dispatch({type: LOAD_FAIL}));
-  }
-}
-
-export function login(username, password) {
-return (dispatch) => {
-     dispatch({type: LOGIN_REQUEST,username, password});
-
-     api.backend('token-auth/',{username, password},{method:'POST'})
-     .then(data => dispatch({type: LOGIN_SUCCESS, data}))
-     .catch(error => dispatch({type: LOGIN_FAIL, error}));
   }
 }
 
