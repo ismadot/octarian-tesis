@@ -26,10 +26,16 @@ function backendgetAuthToken(url, data = {}, params = {}) {
   return axios(BASE_URL+url, {
     ...params,
     headers: {
-        'Accept': "application/json;ident=4",
-        'Content-Type': 'application/json'
-      },
-    data,
+        'Accept': "application/vnd.api+json;application/json;ident=4",
+        'Content-Type': 'application/vnd.api+json'
+    },
+    data:{
+      data:{
+        "type": "ObtainJSONWebToken",
+        "attributes": {...data},
+        
+      }
+    }
   });
 }
 export default {

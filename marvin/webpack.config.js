@@ -19,14 +19,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // Default client app entry file
 const entry = [
   path.join(paths.javascript, 'client.js'),
-  //path.join(paths.javascript, 'client?http://localhost:3000'),
+  path.join(paths.javascript, 'client?http://localhost:3000'),
   //'webpack/hot/only-dev-server',
 ];
 plugins.push(
   // Creates vendor chunk from modules coming from node_modules folder
   new webpack.optimize.CommonsChunkPlugin({
-    //name: ['vendor', 'mainifest'],
-    name: ['vendor'],
+    name: ['vendor', 'mainifest'],
+    //name: ['vendor'],
     filename: outputFiles.vendor,
     minChunks(module) {
       const context = module.context;
@@ -51,8 +51,8 @@ plugins.push(
 if (IS_DEVELOPMENT) {
   // Development plugins
   plugins.push(
-    // Enables HMR
-    new webpack.HotModuleReplacementPlugin(),
+    // Enables HMR for hot module
+    //new webpack.HotModuleReplacementPlugin(),
     // Don't emmit build when there was an error while compiling
     // No assets are emitted that include errors
     new webpack.NoEmitOnErrorsPlugin(),
@@ -74,12 +74,12 @@ module.exports = {
   watch: !IS_PRODUCTION,
   entry,
   output: {
-    path: paths.build,
+    /*path: paths.build,
     publicPath: '/',
-    filename: outputFiles.client,
-/*  filename: outputFiles.client,
+    filename: outputFiles.client,*/
+  filename: outputFiles.client,
     path: path.resolve(paths.build),
-    publicPath: 'http://localhost:3000/assets/bundles/',*/
+    publicPath: 'http://localhost:3000/assets/bundles/',
   },
   module: {
     rules,

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { testAction, testAsync } from 'actions/app';
-import { login } from 'actions/auth';
+import { getTokenAuth } from 'actions/auth';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import CircleSvg from '../../../assets/svg/circle.svg';
 import SquareSvg from '../../../assets/svg/square.svg';
 import TriangleSvg from '../../../assets/svg/triangle.svg';
@@ -12,9 +13,9 @@ import bookImg from '../../../assets/img/book2.jpg';
   asyncData: state.app.get('asyncData'),
   asyncError: state.app.get('asyncError'),
   asyncLoading: state.app.get('asyncLoading'),
-  asyncDataAuth: state.app.get('asyncDataAuth'),
-  asyncErrorAuth: state.app.get('asyncErrorAuth'),
-  asyncLoadingAuth: state.app.get('asyncLoadingAuth'),
+  asyncDataAuth: state.auth.get('asyncDataAuth'),
+  asyncErrorAuth: state.auth.get('asyncErrorAuth'),
+  asyncLoadingAuth: state.auth.get('asyncLoadingAuth'),
   counter: state.app.get('counter'),
 }))
 export default class Dashboard extends Component {
@@ -54,7 +55,7 @@ export default class Dashboard extends Component {
   handleTestLoginButtonClick(){
     const { dispatch } = this.props;
 
-    dispatch(login('isma','ismael.23'));
+    dispatch(tokenAuthGet('isma','ismael.23'));
   }
 
   render() {
@@ -71,6 +72,13 @@ export default class Dashboard extends Component {
     return (
       <div className='Dashboard'>
         <h1>Marvin</h1>
+        <Grid fluid>
+        <Row>
+          <Col xs={6} md={3}>
+            Hello, world!
+          </Col>
+        </Row>
+      </Grid>
         <p>
           Boilerplate for kicking off React/Redux applications.
         </p>
@@ -81,7 +89,6 @@ export default class Dashboard extends Component {
 
         <h3>Synchronous action</h3>
         <div className='Example'>
-            {counter}
           <p>Counter: { counter }</p>
           <button onClick={ this.handleTestButtonClick }>
             Increase
@@ -92,7 +99,7 @@ export default class Dashboard extends Component {
         <div className='Example'>
           { asyncDataAuth &&
             <p>
-            { asyncDataAuth.token }<br />
+            { asyncDataAuth.data.data.token }<br />
             </p> }  
           { asyncLoadingAuth && <p>Loading...</p> }
           { asyncErrorAuth && <p>Error: { asyncErrorAuth }</p> }

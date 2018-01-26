@@ -8,7 +8,7 @@ const devServer = {
   //proxy: { '/': 'http://localhost:8000'},
   compress: IS_PRODUCTION,
   inline: !IS_PRODUCTION,
-  hot: !IS_PRODUCTION,
+  hot: false,
   host: '0.0.0.0',
   disableHostCheck: true, // To enable local network testing
   overlay: true,

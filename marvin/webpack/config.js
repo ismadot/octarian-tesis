@@ -27,12 +27,12 @@ const IS_PRODUCTION = NODE_ENV === 'production';
 // Shared plugins
 const plugins = [
   //webpack-loader
-  //new BundleTracker({filename: './webpack-stats.json'}),
+  new BundleTracker({filename: './webpack-stats.json'}),
   // Extracts CSS to a file
-  new ExtractTextPlugin(outputFiles.css),
-  /*new ExtractTextPlugin(outputFiles.css, {
+  //new ExtractTextPlugin(outputFiles.css),
+  new ExtractTextPlugin(outputFiles.css, {
     allChunks : true 
-  }),*/
+  }),
   // Injects env variables to our app
   new webpack.DefinePlugin({
     'process.env': {
@@ -89,6 +89,12 @@ const rules = [
         loader: 'babel-loader',
       }
     ],
+  },
+  {
+    test: /\.css$/,
+    loader: 'style-loader!css-loader!postcss-loader',
+    include: path.join(__dirname, 'node_modules'), // oops, this also includes flexboxgrid
+    exclude: /flexboxgrid/ // so we have to exclude it
   },
   {
     test: /\.svg$/,
@@ -181,7 +187,14 @@ const getSassRule = () => {
 
 // Add SASS rule to common rules
 rules.push(getSassRule());
-
+rules.push( {
+      test: /\.css$/,
+      include: /flexboxgrid/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ],
+    });
 
 // ----------
 // RESOLVE

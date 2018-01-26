@@ -24,35 +24,13 @@ export const TOKEN_REQUEST  = 'auth/TOKEN_REQUEST';
 export const TOKEN_SUCCESS  = 'auth/TOKEN_SUCCESS';
 export const TOKEN_FAIL     = 'auth/TOKEN_FAIL';
 
-function authRequest(){
-  return {
-    type: LOGIN_REQUEST
-  };
-}
-
-function authSuccess(data){
-  console.log(data)
-  return {
-    type: LOGIN_SUCCESS,
-    data
-  }
-}
-
-function authFail(error){
-  return {
-    type: LOGIN_FAIL,
-    error
-  }
-}
-
-
-export function login(username, password) {
+export function tokenAuthGet(username, password) {
   return (dispatch) => {
-     dispatch(authRequest());
+     dispatch({type: LOGIN_REQUEST});
 
      api.backendgetAuthToken('token-auth/',{username, password},{method:'POST'})
-     .then(data => dispatch(authSuccess(data)))
-     .catch(error => dispatch(authFail(error)));
+     .then(data => dispatch({type: LOGIN_SUCCESS, data}))
+     .catch(error => dispatch({type: LOGIN_FAIL, error}));
   }
 }
 

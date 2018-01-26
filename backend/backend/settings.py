@@ -87,19 +87,19 @@ APPEND_SLASH = False
 
 REST_FRAMEWORK = {
     #init ----json api package
-    #'DEFAULT_RENDERER_CLASSES': (
-    #    'rest_framework_json_api.renderers.JSONRenderer',
-    #    'rest_framework.renderers.BrowsableAPIRenderer',
-    #),
-    # 'PAGE_SIZE': 10,  
-    # 'DEFAULT_PAGINATION_CLASS':
-    #     'rest_framework_json_api.pagination.PageNumberPagination', 
-    #'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
-    #'DEFAULT_PARSER_CLASSES': (
-    #    'rest_framework_json_api.parsers.JSONParser',
-    #    'rest_framework.parsers.FormParser',
-    #    'rest_framework.parsers.MultiPartParser'
-    #),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_json_api.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+     'PAGE_SIZE': 10,  
+     'DEFAULT_PAGINATION_CLASS':
+         'rest_framework_json_api.pagination.PageNumberPagination', 
+    'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework_json_api.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser'
+    ),
     #'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
     # end ---json api package 
     'DEFAULT_PERMISSION_CLASSES': (
@@ -120,7 +120,7 @@ WEBPACK_LOADER = {
         'STATS_FILE': os.path.join(BASE_DIR, '../marvin/webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
-        #'IGNORE': ['.+\.hot-update.js', '.+\.map']
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
     }
 }
 
@@ -150,7 +150,7 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
     'JWT_AUDIENCE': None,
     'JWT_ISSUER': None,
-    'JWT_ALLOW_REFRESH': False,
+    'JWT_ALLOW_REFRESH': True,
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
