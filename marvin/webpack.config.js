@@ -1,32 +1,32 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const paths = require('./webpack/config').paths;
-const outputFiles = require('./webpack/config').outputFiles;
-const rules = require('./webpack/config').rules;
-const plugins = require('./webpack/config').plugins;
-const resolve = require('./webpack/config').resolve;
-const IS_PRODUCTION = require('./webpack/config').IS_PRODUCTION;
-const IS_DEVELOPMENT = require('./webpack/config').IS_DEVELOPMENT;
+const {
+  paths,
+  outputFiles,
+  rules,
+  plugins,
+  resolve,
+  stats,
+  IS_PRODUCTION,
+  IS_DEVELOPMENT,
+} = require('./webpack/config');
 
 const devServer = require('./webpack/dev-server').devServer;
 
-//const BundleTracker = require('webpack-bundle-tracker');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 // Default client app entry file
 const entry = [
   path.join(paths.javascript, 'client.js'),
-  path.join(paths.javascript, 'client?http://localhost:3000'),
-  //'webpack/hot/only-dev-server',
 ];
+
 plugins.push(
   // Creates vendor chunk from modules coming from node_modules folder
   new webpack.optimize.CommonsChunkPlugin({
+    //name: 'vendor',
     name: ['vendor', 'mainifest'],
-    //name: ['vendor'],
     filename: outputFiles.vendor,
     minChunks(module) {
       const context = module.context;
@@ -51,20 +51,15 @@ plugins.push(
 if (IS_DEVELOPMENT) {
   // Development plugins
   plugins.push(
-    // Enables HMR for hot module
-    //new webpack.HotModuleReplacementPlugin(),
+    // Enables HMR
+    new webpack.HotModuleReplacementPlugin(),
     // Don't emmit build when there was an error while compiling
     // No assets are emitted that include errors
-    new webpack.NoEmitOnErrorsPlugin(),
-    // Webpack dashboard plugin
-    new DashboardPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   );
 
-  // In development we add 'react-hot-loader' for .js/.jsx files
-  // Check rules in config.js
-  rules[0].use.unshift('react-hot-loader/webpack');
-  entry.unshift('react-hot-loader/patch');
-  //entry.unshift('react-hot-loader/patch','webpack-dev-server/client?http://localhost:3000');
+  // For IE babel-polyfill has to be loaded before react-hot-loader
+  entry.unshift('babel-polyfill');
 }
 
 // Webpack config
@@ -77,14 +72,15 @@ module.exports = {
     /*path: paths.build,
     publicPath: '/',
     filename: outputFiles.client,*/
-  filename: outputFiles.client,
+    filename: outputFiles.client,
     path: path.resolve(paths.build),
-    publicPath: 'http://localhost:3000/assets/bundles/',
+    publicPath: 'http://localhost:8080/assets/bundles/',
   },
   module: {
     rules,
   },
-  resolve,
   plugins,
+  resolve,
+  stats,
   devServer,
 };

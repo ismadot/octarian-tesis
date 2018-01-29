@@ -9,7 +9,8 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 router = routers.DefaultRouter()
 
 router.register(r'Projects',ProjectsViewSet)
-router.register(r'users', UserViewSet)
+router.register(r'Users', UserViewSet)
+router.register(r'Categorys', CategorysProjectsViewSet)
 
 urlpatterns = [
     url(r'^token-auth/', obtain_jwt_token),

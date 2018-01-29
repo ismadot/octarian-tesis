@@ -1,0 +1,155 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$cyXE4FrZUTSu$x52kF1p2jvj0+jq/qDPPkxkLjdO+4bUlmKPL2VnVC6M=",
+    "last_login": "2018-01-27T16:26:42.351Z",
+    "is_superuser": true,
+    "username": "isma",
+    "first_name": "",
+    "last_name": "",
+    "email": "cesar.23.1995@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2018-01-23T03:09:28.668Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$7JiPPjsnIMtH$gz7OMyMVavsJ7sJyN9bmEBlheZoiqWPI/+mRrPW4C38=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mirio",
+    "first_name": "",
+    "last_name": "",
+    "email": "mirio@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-27T16:45:01.573Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 1,
+  "fields": {
+    "name": "Arte",
+    "state": true,
+    "description": "proyectos de arte",
+    "slug": "arte",
+    "created_date": "2018-01-28T00:07:24.091Z",
+    "modified_date": "2018-01-28T00:07:24.092Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 2,
+  "fields": {
+    "name": "Cultura",
+    "state": true,
+    "description": "awdawdawd",
+    "slug": "cultura",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-01-28T00:07:42.921Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 3,
+  "fields": {
+    "name": "Agropecuario",
+    "state": true,
+    "description": "awdawdawd",
+    "slug": "agropecuario",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-01-28T00:07:42.921Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 4,
+  "fields": {
+    "name": "Tecnologia",
+    "state": true,
+    "description": "awdawdawd",
+    "slug": "tecnologia",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-01-28T00:07:42.921Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 5,
+  "fields": {
+    "name": "Arquitectura",
+    "state": true,
+    "description": "awdawdawd",
+    "slug": "arquitectura",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-01-28T00:07:42.921Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 6,
+  "fields": {
+    "name": "Recreacion",
+    "state": true,
+    "description": "awdawdawd",
+    "slug": "recreacion",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-01-28T00:07:42.921Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "Category": 1,
+    "name": "holass",
+    "description": "awdawdwdwadwad",
+    "file": "Proyectos/arbol_prelaciones_informatica_UNERG_2016.pdf",
+    "slug": "holass",
+    "state": true,
+    "created_date": "2018-01-28T01:34:16.846Z",
+    "modified_date": "2018-01-28T01:34:16.846Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "Category": 2,
+    "name": "zombieipsum",
+    "description": "Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit​​, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.",
+    "file": "Proyectos/arbol_prelaciones_informatica_UNERG_2016.pdf",
+    "slug": "zombieipsum",
+    "state": true,
+    "created_date": "2018-01-28T01:34:16.846Z",
+    "modified_date": "2018-01-28T01:34:16.846Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "Category": 3,
+    "name": "batman-ipsum",
+    "description": "Na na na na na na Batman! Batman! Batman! na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na naNa na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na Batman! na na na na na na na na na Batman! na na na na na na na na na na na na Batman! na na na na na na na na na na na na Batman! na na na Na na na na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na na na na na na na Na na na na na na na na na na na na na na na na na na na na na Batman! na na na Batman! na na na na na na na na na na na na na na na na na na Batman! na na na na na na Batman! Na na na na na na na na na na na na na na na na na na Na na na Batman! na na na na na na na na na na na na na na na na na na Batman! na na na Na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na Batman! Batman! na na na na na na na na na na na na na na na na na na Na na na Batman! Batman! na na na Batman! na na na Batman! na na na na na na na na na Batman! na na na na na na na na na na na na na na na na na na na na na na na na",
+    "file": "Proyectos/arbol_prelaciones_informatica_UNERG_2016.pdf",
+    "slug": "batman-ipsum",
+    "state": true,
+    "created_date": "2018-01-28T01:34:16.846Z",
+    "modified_date": "2018-01-28T01:34:16.846Z"
+  }
+}
+]

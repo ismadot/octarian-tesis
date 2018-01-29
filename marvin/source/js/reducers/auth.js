@@ -1,87 +1,42 @@
 import { Map } from 'immutable';
 
 import {
-    LOAD_REQUEST,
-    LOAD_SUCCESS,
-    LOAD_FAIL,
-
-    LOGIN_REQUEST,
-    LOGIN_SUCCESS,
-    LOGIN_FAIL,
-
-    LOGOUT_REQUEST,
-    LOGOUT_SUCCESS,
-    LOGOUT_FAIL,
+  GET_TOKEN_START,
+  GET_TOKEN_ERROR,
+  GET_TOKEN_SUCCESS,
 } from 'actions/auth';
 
 const initialState = Map({
-  asyncLoadingAuth: false,
-  asyncErrorAuth: null,
-  asyncDataAuth: null,
+  loadingAuth: false,
+  errorAuth: null,
+  tokenAuth: null,
 });
 
 const actionsMap = {
-  [LOGIN_REQUEST]: (state) => {
+  // Async action
+  [GET_TOKEN_START]: (state) => {
     return state.merge(Map({
-      asyncLoadingAuth: true,
-      asyncErrorAuth: null,
-      asyncDataAuth: null,
+      loadingAuth: true,
+      errorAuth: null,
+      tokenAuth: null,
     }));
   },
-  [LOGIN_FAIL]: (state, action) => {
+  [GET_TOKEN_ERROR]: (state, action) => {
     return state.merge(Map({
-      asyncLoadingAuth: false,
-      asyncErrorAuth: action.error.message,
+      loadingAuth: false,
+      errorAuth: action.error.message,
     }));
   },
-  [LOGIN_SUCCESS]: (state, action) => {
-      return state.merge(Map({
-        asyncLoadingAuth: false,
-        asyncDataAuth:action.data,
-      }));
-  },
-  [LOAD_REQUEST]: (state) => {
+  [GET_TOKEN_SUCCESS]: (state, action) => {
     return state.merge(Map({
-      asyncLoading: true,
-      asyncError: null,
-      asyncData: null,
+      loadingAuth: false,
+      tokenAuth: action.data,
     }));
   },
-  [LOAD_FAIL]: (state, action) => {
-    return state.merge(Map({
-      asyncLoading: false,
-      asyncError: action.error.message,
-    }));
-  },
-  [LOAD_SUCCESS]: (state, action) => {
-      return state.merge(Map({
-        asyncLoading: false,
-        asyncData: action.data,
-      }));
-    },
-  [LOGOUT_REQUEST]: (state) => {
-    return state.merge(Map({
-      asyncLoading: true,
-      asyncError: null,
-      asyncData: null,
-    }));
-  },
-  [LOGOUT_FAIL]: (state, action) => {
-    return state.merge(Map({
-      asyncLoading: false,
-      asyncError: action.error.message,
-    }));
-  },
-  [LOGOUT_SUCCESS]: (state, action) => {
-    console.log(action.data);
-      return state.merge(Map({
-        asyncLoading: false,
-        asyncData: action.data,
-      }));
-    },
-  };
+};
 
 export default function reducer(state = initialState, action = {}) {
   const fn = actionsMap[action.type];
   return fn ? fn(state, action) : state;
 }
+

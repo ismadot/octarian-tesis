@@ -51,6 +51,11 @@ MIDDLEWARE_THIRD_PARTY_APPS=[
     'django.middleware.common.CommonMiddleware',
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'backend.backends.EmailAuthBackend'
+)
+
 MIDDLEWARE= [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,25 +88,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-APPEND_SLASH = False
-
 REST_FRAMEWORK = {
-    #init ----json api package
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework_json_api.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ),
-     'PAGE_SIZE': 10,  
-     'DEFAULT_PAGINATION_CLASS':
-         'rest_framework_json_api.pagination.PageNumberPagination', 
+    #---django-json-api
     'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
     'DEFAULT_PARSER_CLASSES': (
         'rest_framework_json_api.parsers.JSONParser',
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser'
     ),
-    #'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
-    # end ---json api package 
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework_json_api.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
+    #---django-json-api
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ),
@@ -110,8 +110,16 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
-    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
+    'PAGE_SIZE': 5,
+    'DEFAULT_PAGINATION_CLASS':
+        #'rest_framework.pagination.LimitOffsetPagination',
+        #'drf_link_header_pagination.LinkHeaderPagination',
+        #'rest_framework_json_api.pagination.PageNumberPagination',
+        'backend.backends.CustomPagination',
 }
+
+JSON_API_FORMAT_KEYS = 'dasherize'
 
 WEBPACK_LOADER = {
     'DEFAULT': {

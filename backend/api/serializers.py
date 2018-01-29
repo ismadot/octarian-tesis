@@ -6,10 +6,16 @@ from projects.models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'is_staff', 'first_name', 'last_name')
+        fields = ('email', 'is_staff', 'first_name', 'last_name')
 
 
 class ProjectSerializers(serializers.ModelSerializer):
     class Meta:
       model = Projects
+      fields = '__all__'
+
+
+class CategorysProjectsSerializers(serializers.ModelSerializer):
+    class Meta:
+      model = CategorysProjects
       fields = '__all__'
