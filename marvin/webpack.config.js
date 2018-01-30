@@ -69,9 +69,11 @@ module.exports = {
   watch: !IS_PRODUCTION,
   entry,
   output: {
-    /*path: paths.build,
+    /*
+    path: paths.build,
     publicPath: '/',
-    filename: outputFiles.client,*/
+    filename: outputFiles.client,
+    */
     filename: outputFiles.client,
     path: path.resolve(paths.build),
     publicPath: 'http://localhost:8080/assets/bundles/',

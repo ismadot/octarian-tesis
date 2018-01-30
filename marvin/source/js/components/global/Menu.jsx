@@ -42,9 +42,11 @@ function ButtonAppBar(props) {
                   </Col>
                 </NavLink>
                 <Col md={8} xs={8}>
-                  <Typography type="title" color="inherit" className={classes.flex}>
-                        empieza tu proyecto
-                  </Typography>
+                  <NavLink activeClassName='Menu-link--active' className='Menu-link' to={ routeCodes.PEOPLE }>
+                    <Typography type="title" color="inherit"  className={classes.flex}>
+                          empieza tu proyecto
+                    </Typography>
+                  </NavLink>
                 </Col>
               </Row>
             </Col>

@@ -111,7 +111,6 @@ function getPeople() {
 }
 
 function backendgetAuthToken(url, data = {}, params = {}) {
-  console.log(data)
   return axios(BASE_URL+url, {
     ...params,
     headers: {
@@ -127,8 +126,12 @@ function backendgetAuthToken(url, data = {}, params = {}) {
     }
   });
 }
+function backendGetInfo(url, params = {}) {
+  return axios(BASE_URL+url, {});
+}
 
 export default {
   getPeople,
   backendgetAuthToken,
+  backendGetInfo,
 };

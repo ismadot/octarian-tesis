@@ -19,6 +19,11 @@ class CategorysProjects(models.Model):
         null=True,
         verbose_name="Descripcion de la categoria"
     )
+    icon = models.CharField(
+        blank=True,
+        max_length=50,
+        verbose_name="icon name",
+    )
     slug = models.SlugField(
         max_length=100,
         verbose_name="Slug",

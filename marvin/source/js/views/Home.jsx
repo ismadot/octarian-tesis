@@ -16,7 +16,7 @@ import Tabs from 'components/tabSlider/tabSlider';
   loadingAuth: state.auth.get('loadingAuth'),
   errorAuth: state.auth.get('errorAuth'),
   tokenAuth: state.auth.get('tokenAuth'),
-    
+
 }))
 
 export default class Home extends Component {
@@ -41,6 +41,8 @@ export default class Home extends Component {
 
     dispatch(getToken({"username":'isma',"password":'ismael.23'}));
   }
+  componentWillMount() {
+  }
 
   render() {
     const {
@@ -61,14 +63,10 @@ export default class Home extends Component {
         </p>
         <h2>About</h2>
         <p>
-          Marvin is internal project by <a href='https://work.co'>Work & Co</a>.
+          Marvin is internal project
           We love React and use it a lot. So Marvin is meant to be a starting point
           for our React projects. But as we love open source too, it is publicly
           available for anyone interested in using it.
-        </p>
-        <p>
-          Visit documentation
-          on <a href='https://github.com/workco/react-redux-webpack2-boilerplate'>GitHub</a>
         </p>
 
         <hr />

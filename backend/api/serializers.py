@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import *
 from projects.models import *
+from verification.models import *
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,4 +19,10 @@ class ProjectSerializers(serializers.ModelSerializer):
 class CategorysProjectsSerializers(serializers.ModelSerializer):
     class Meta:
       model = CategorysProjects
+      fields = '__all__'
+
+
+class VerificationSerializers(serializers.ModelSerializer):
+    class Meta:
+      model = Verification
       fields = '__all__'

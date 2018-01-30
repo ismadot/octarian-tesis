@@ -11,6 +11,7 @@ router = routers.DefaultRouter()
 router.register(r'Projects',ProjectsViewSet)
 router.register(r'Users', UserViewSet)
 router.register(r'Categorys', CategorysProjectsViewSet)
+router.register(r'Verification', VerificationViewSet)
 
 urlpatterns = [
     url(r'^token-auth/', obtain_jwt_token),

@@ -7,6 +7,7 @@ import django_filters
 from django.db.models import Q
 from .models import *
 from projects.models import *
+from verification.models import *
 
 
 class GenericApi(object):
@@ -23,8 +24,7 @@ class GenericApi(object):
         return Response(serializer.data)
         '''
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-        queryset = self.filter_queryset(queryset)
+        queryset = self.filter_queryset(self.get_queryset())
         filter = {}
         fields = tuple([str(x.name) for x in self.queryset.model._meta.fields])
         query_params = self.request.query_params.dict()
@@ -58,17 +58,20 @@ class GenericApi(object):
 
 class UserViewSet(GenericApi, viewsets.ModelViewSet):
     queryset = User.objects.all()
-    resource_name = 'users'
     serializer_class = UserSerializer
 
 
 class ProjectsViewSet(GenericApi, viewsets.ModelViewSet):
     queryset = Projects.objects.all()
-    resource_name = 'Projects'
     serializer_class = ProjectSerializers
-    
+
 
 class CategorysProjectsViewSet(GenericApi, viewsets.ModelViewSet):
     queryset = CategorysProjects.objects.all()
-    resource_name = 'CategorysProjects'
     serializer_class = CategorysProjectsSerializers
+ 
+
+class VerificationViewSet(GenericApi, viewsets.ModelViewSet):
+    queryset = Verification.objects.all()
+    serializer_class = VerificationSerializers
+ 
