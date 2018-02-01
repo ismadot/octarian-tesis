@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import { increment } from 'actions/app';
 import { getToken } from 'actions/auth';
+
+import Stats from 'components/stats';
+import TabSlider from 'components/tabSlider';
+import TabContainer from 'components/tabSlider';
+
+import { Row, Col } from 'react-flexbox-grid';
+import TriangleSvg from 'svg/triangle.svg';
 import CircleSvg from 'svg/circle.svg';
 import SquareSvg from 'svg/square.svg';
-import TriangleSvg from 'svg/triangle.svg';
 import bookImg from 'img/book2.jpg';
-import { Row, Col } from 'react-flexbox-grid';
-import Stats from 'components/Stats/Stats';
-import Tabs from 'components/tabSlider/tabSlider';
+
 
 @connect(state => ({
   counter: state.app.get('counter'),
@@ -54,8 +59,8 @@ export default class Home extends Component {
 
     return (
        <Col md={12} xs={12} className='Home'>
-        <Stats name="hola" />
-        <Tabs/>
+        <Stats/>
+        <TabSlider/>
 
         <h1>Marvin</h1>
         <p>

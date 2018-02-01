@@ -25,6 +25,7 @@ class CategorysProjects(models.Model):
         verbose_name="icon name",
     )
     slug = models.SlugField(
+        blank=True,
         max_length=100,
         verbose_name="Slug",
     )
@@ -79,20 +80,30 @@ class Projects(models.Model):
         upload_to="Proyectos",
         verbose_name="proyecto"
     )
+    image = models.FileField(
+        blank=True,
+        null=True,
+        upload_to="Images",
+        verbose_name="Image"
+    )
     slug = models.SlugField(
         max_length=100,
         verbose_name="Slug",
-        blank=True,
+        null=True,
     )
     state = models.BooleanField(
         default=True,
         verbose_name="Estado del proyecto"
     )
     created_date = models.DateTimeField(
-      verbose_name="Fecha de creacion", auto_now_add=True
+      verbose_name="Fecha de creacion", 
+      blank=True,
+      auto_now_add=True
       )
     modified_date = models.DateTimeField(
-      verbose_name="fecha de modificacion", auto_now=True
+      verbose_name="fecha de modificacion", 
+      blank=True,
+      auto_now=True
       )
 
     def save(self, *args, **kwargs):

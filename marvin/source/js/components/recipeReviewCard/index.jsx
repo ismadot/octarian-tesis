@@ -40,6 +40,10 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
+  static propTypes = {
+    classes :PropTypes.object.isRequired,
+    elements:PropTypes.object,
+  }
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -47,28 +51,26 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-
+    const { 
+      classes,
+      elements
+    } = this.props;
     return (
       <Col xs={12}>
         <Card className={classes.card}>
           <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
-              </Avatar>
-            }
             action={
               <IconButton>
                 <MoreVertIcon />
-              </IconButton>
-            }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
+              </IconButton>}
+            title={
+              <Typography type="headline" component="h2">
+            {elements.name}
+          </Typography>}
           />
           <CardMedia
             className={classes.media}
-            image="/static/images/cards/paella.jpg"
+            image={elements.image}
             title="Contemplative Reptile"
           />
           <CardContent>
@@ -126,9 +128,5 @@ class RecipeReviewCard extends React.Component {
     );
   }
 }
-
-RecipeReviewCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(RecipeReviewCard);

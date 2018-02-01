@@ -126,6 +126,22 @@ function backendgetAuthToken(url, data = {}, params = {}) {
     }
   });
 }
+function backendGetProjects(url, data = {}, params = {}) {
+  return axios(BASE_URL+url, {
+    ...params,
+    headers: {
+        'Accept': "application/vnd.api+json;application/json;ident=4",
+        'Content-Type': 'application/vnd.api+json'
+    },
+    data:{
+      data:{
+        "type": "ObtainJSONWebToken",
+        "id": "null",
+        "attributes": data,
+      },
+    }
+  });
+}
 function backendGetInfo(url, params = {}) {
   return axios(BASE_URL+url, {});
 }

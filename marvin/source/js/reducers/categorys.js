@@ -30,7 +30,7 @@ const actionsMap = {
   [GET_CATEGORYS_SUCCESS]: (state, action) => {
     return state.merge(Map({
       loadingCategorys: false,
-      dataCategorys: action.data,
+      dataCategorys: action.data.data.data,
     }));
   },
 };

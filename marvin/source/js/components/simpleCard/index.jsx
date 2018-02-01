@@ -17,18 +17,21 @@ const styles = {
 };
 
 function SimpleCard(props) {
-  const { classes } = props;
+  const { 
+    classes,
+    elements
+   } = props;
   return (
     <Col xs={4}>
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+          image={elements.image}
+          title={elements.name}
         />
         <CardContent>
           <Typography type="headline" component="h2">
-            Lizard
+            {elements.name}
           </Typography>
           <Typography component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
@@ -37,7 +40,7 @@ function SimpleCard(props) {
         </CardContent>
         <CardActions>
           <Button size="small" color="primary">
-            Learn More
+            Leer mas
           </Button>
         </CardActions>
       </Card>
@@ -46,7 +49,8 @@ function SimpleCard(props) {
 }
 
 SimpleCard.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes : PropTypes.object.isRequired,
+  elements:PropTypes.object
 };
 
 export default withStyles(styles)(SimpleCard);

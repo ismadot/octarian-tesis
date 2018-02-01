@@ -19,8 +19,8 @@ import FavoriteIcon from 'material-ui-icons/Favorite';
 
 const styles = theme => ({
    bullet: {
-    display: 'inline-block',
     margin: '0 2px',
+    display: 'inline-block',
     transform: 'scale(0.8)',
   },
   card: {
@@ -33,11 +33,11 @@ const styles = theme => ({
     display: 'flex',
   },
   expand: {
+    marginLeft: 'auto',
     transform: 'rotate(0deg)',
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
-    marginLeft: 'auto',
   },
   expandOpen: {
     transform: 'rotate(180deg)',
@@ -74,16 +74,20 @@ class Stats extends Component {
                  "Abril","Mayo","Junio",
                  "Julio","Agosto","Septiembre",
                  "Octubre","Noviembre","Diciembre"]
+   
     let day = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"]
+   
     let date = day[f.getDay()] + ", " + f.getDate() + " de " + month[f.getMonth()] + " de " + f.getFullYear()
 
     this.setState({ date });
     
     const { dispatch,
-            dataInfo } = this.props;
+            dataInfo 
+          } = this.props;
+    
     if (!dataInfo) {
         dispatch(getInfo());
-      }  
+    }  
   }
   renderDataInfo() {
     const {

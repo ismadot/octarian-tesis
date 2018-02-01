@@ -32,7 +32,6 @@ export default class People extends Component {
     const {
       people,
     } = this.props;
-    this.setState({ value:22 });
 
     return people.results.map(person => {
       return (
