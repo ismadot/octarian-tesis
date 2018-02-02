@@ -132,12 +132,12 @@ class tabSlider extends Component {
             { dataCategorys && this.renderDataCategorys() }
           </Tabs>
         </AppBar>
-            {value === 0 && (<HomeTabs category={list[0].id} />)}
-            {value === 1 && (<HomeTabs category={list[1].id} />)}
-            {value === 2 && (<HomeTabs category={list[2].id} />)}
-            {value === 3 && (<HomeTabs category={list[3].id} />)}
-            {value === 4 && (<HomeTabs category={list[4].id} />)}
-            {value === 5 && (<HomeTabs category={list[5].id} />)}
+            {value === 0 && (<HomeTabs category = { list[0].id } />)}
+            {value === 1 && (<HomeTabs category = { list[1].id } />)}
+            {value === 2 && (<HomeTabs category = { list[2].id } />)}
+            {value === 3 && (<HomeTabs category = { list[3].id } />)}
+            {value === 4 && (<HomeTabs category = { list[4].id } />)}
+            {value === 5 && (<HomeTabs category = { list[5].id } />)}
       </div>
     )
   }

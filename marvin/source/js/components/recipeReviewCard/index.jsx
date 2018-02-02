@@ -6,6 +6,7 @@ import Card, { CardHeader, CardMedia, CardContent, CardActions } from 'material-
 import Collapse from 'material-ui/transitions/Collapse';
 import Avatar from 'material-ui/Avatar';
 import { Row, Col } from 'react-flexbox-grid';
+
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import red from 'material-ui/colors/red';
@@ -13,6 +14,10 @@ import FavoriteIcon from 'material-ui-icons/Favorite';
 import ShareIcon from 'material-ui-icons/Share';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
+import { NavLink } from 'react-router-dom';
+import { routeCodes } from 'constants/routes';
+import Button from 'material-ui/Button';
+
 
 const styles = theme => ({
   card: {
@@ -83,6 +88,11 @@ class RecipeReviewCard extends React.Component {
             <IconButton aria-label="Add to favorites">
               <FavoriteIcon />
             </IconButton>
+        <NavLink activeClassName='Menu-link--active' className='Menu-link' to={ routeCodes.PROJECT + elements.slug }>
+          <Button size="small" color="primary">
+            Leer mas
+          </Button>
+        </NavLink>
             <IconButton
               className={classnames(classes.expand, {
                 [classes.expandOpen]: this.state.expanded,

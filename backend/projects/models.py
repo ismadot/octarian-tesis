@@ -63,6 +63,7 @@ class Projects(models.Model):
     )
     Category = models.ForeignKey(
         CategorysProjects,
+        related_name='Category',
         verbose_name="Categoria",
     )
     name = models.CharField(
@@ -112,7 +113,7 @@ class Projects(models.Model):
 
     class Meta:
             db_table = 'Projects'
-            ordering = ["name"]
+            ordering = ["-created_date"]
             verbose_name = "Proyecto"
             verbose_name_plural = "Proyectos"
 

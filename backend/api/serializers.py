@@ -10,15 +10,22 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('email', 'is_staff', 'first_name', 'last_name')
 
 
-class ProjectSerializers(serializers.ModelSerializer):
+class CategorysProjectsSerializers(serializers.ModelSerializer):
+    class Meta:
+      model = CategorysProjects
+      fields = '__all__'
+
+
+class ProjectsByCategorysSerializers(serializers.ModelSerializer):
     class Meta:
       model = Projects
       fields = '__all__'
 
 
-class CategorysProjectsSerializers(serializers.ModelSerializer):
+class ProjectSerializers(serializers.ModelSerializer):
+    '''Category = CategorysProjectsSerializers()'''
     class Meta:
-      model = CategorysProjects
+      model = Projects
       fields = '__all__'
 
 

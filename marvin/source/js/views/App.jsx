@@ -5,11 +5,11 @@ import { routeCodes } from 'constants/routes';
 import Menu from 'components/global/Menu';
 import Home from 'views/Home';
 import People from 'views/People';
+import Project from 'views/Project';
 import NotFound from 'views/NotFound';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
 const theme = createMuiTheme();
 
 class App extends Component {
@@ -22,9 +22,10 @@ class App extends Component {
                 <Menu/>
                 <div className='Page'>
                   <Switch>
-                    <Route exact path={ routeCodes.HOME } component={ Home } />
-                    <Route path={ routeCodes.PEOPLE } component={ People } />
-                    <Route path='*' component={ NotFound } />
+                    <Route path={ routeCodes.HOME } exact       component={ Home } />
+                    <Route path={ routeCodes.PEOPLE }           component={ People } />
+                    <Route path={ routeCodes.PROJECT+':param' } component={ Project } />
+                    <Route path='*'                             component={ NotFound } />
                   </Switch>
                 </div>
               </div>
