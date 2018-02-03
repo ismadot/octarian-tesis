@@ -12,6 +12,8 @@ router.register(r'Projects',ProjectsViewSet)
 router.register(r'Users', UserViewSet)
 router.register(r'Categorys', CategorysProjectsViewSet)
 router.register(r'Verification', VerificationViewSet)
+router.register(r'Comments', CommentsViewSet)
+router.register(r'Profiles', ProfilesViewSet)
 
 urlpatterns = [
     url(r'^token-auth/', obtain_jwt_token),

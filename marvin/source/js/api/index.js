@@ -109,7 +109,14 @@ const fetchResource = (path, userOptions = {}) => {
 function getPeople() {
   return fetchResource('people/');
 }
-
+/*
+const axiosConf{
+  headers: {
+        'X-CSRFToken': Cookies.get(csrftoken),
+        'Content-Type': 'application/vnd.api+json'
+    }
+}
+*/
 function backendgetAuthToken(url, data = {}, params = {}) {
   return axios(BASE_URL+url, {
     ...params,
@@ -119,7 +126,7 @@ function backendgetAuthToken(url, data = {}, params = {}) {
     },
     data:{
       data:{
-        "type": "ObtainJSONWebToken",
+        "type": "User",
         "id": "null",
         "attributes": data,
       },

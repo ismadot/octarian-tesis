@@ -69,9 +69,20 @@ class ProjectsViewSet(GenericApi, viewsets.ModelViewSet):
 class CategorysProjectsViewSet(GenericApi, viewsets.ModelViewSet):
     queryset = CategorysProjects.objects.all()
     serializer_class = CategorysProjectsSerializers
- 
+
 
 class VerificationViewSet(GenericApi, viewsets.ModelViewSet):
     queryset = Verification.objects.all()
     serializer_class = VerificationSerializers
+
+
+class CommentsViewSet(GenericApi, viewsets.ModelViewSet):
+    queryset = Comments.objects.all()
+    serializer_class = CommentSerializers
+
+
+class ProfilesViewSet(GenericApi, viewsets.ModelViewSet):
+    queryset = Profiles.objects.all()
+    serializer_class = ProfileSerializers
+
  

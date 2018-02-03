@@ -9,6 +9,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import SimpleCard from 'components/simpleCard/';
 import RecipeReviewCard from 'components/recipeReviewCard/';
 import { withStyles } from 'material-ui/styles';
+import classnames from 'classnames';
 
 import Ionicon from 'react-ionicons'
 
@@ -58,6 +59,7 @@ class HomeTabs extends React.Component {
   let request='&Category='+category;
   if (category) {
     if (!dataProjects) {
+      console.log(category)
       dispatch(getProjects({request}))
     }else{
       dispatch(getProjects({request}))
@@ -74,13 +76,13 @@ class HomeTabs extends React.Component {
     return (
      <Col xs={12}>
         <Row>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             { dataProjects &&
             <TabContainer>
                <RecipeReviewCard elements={ dataProjects.data.data[0] } /> 
             </TabContainer>}
           </Col>
-          <Col xs={6} className={classes.content}>
+          <Col xs={12} md={6} className={classes.content}>
             <Row>
             { dataProjects && <SimpleCard elements={ dataProjects.data.data[1] } />}
             { dataProjects && <SimpleCard elements={ dataProjects.data.data[2] } />}

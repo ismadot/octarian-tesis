@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import { increment } from 'actions/app';
 import { getToken } from 'actions/auth';
@@ -46,6 +47,12 @@ export default class Home extends Component {
 
     dispatch(getToken({"username":'isma',"password":'ismael.23'}));
   }
+
+  handleTesToken = () => {
+ 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+  }
   componentWillMount() {
   }
 
@@ -62,6 +69,14 @@ export default class Home extends Component {
         <Stats/>
         <TabSlider/>
 
+        <h3>Get csrfToken</h3>
+        <div className='Example'>
+          <button
+            onClick={ this.handleTesToken }>
+          Token
+          </button>
+        </div>
+          {/*  
         <h1>Marvin</h1>
         <p>
           Boilerplate for kicking off React/Redux applications.
@@ -118,6 +133,7 @@ export default class Home extends Component {
           <SquareSvg style={ { marginRight: 10 } } />
           <TriangleSvg />
         </div>
+          */}
        </Col>
     );
   }

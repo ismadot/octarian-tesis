@@ -71,13 +71,9 @@ class Projects(models.Model):
       verbose_name="nombre del proyecto"
     )
     description = models.TextField(
-        blank=True,
-        null=True,
         verbose_name="Descripcion del proyecto"
     )
     file = models.FileField(
-        blank=True,
-        null=True,
         upload_to="Proyectos",
         verbose_name="proyecto"
     )
@@ -88,9 +84,10 @@ class Projects(models.Model):
         verbose_name="Image"
     )
     slug = models.SlugField(
+        blank=True,
+        null=True,
         max_length=100,
         verbose_name="Slug",
-        null=True,
     )
     state = models.BooleanField(
         default=True,

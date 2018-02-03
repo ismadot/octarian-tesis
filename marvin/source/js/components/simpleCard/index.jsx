@@ -33,10 +33,12 @@ function SimpleCard(props) {
           <Typography type="headline" component="h2">
             {elements.name}
           </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
+          {/*
+            <Typography component="p">
+              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+              across all continents except Antarctica
+            </Typography>
+          */}
         </CardContent>
         <CardActions>
           <Button size="small" color="primary">

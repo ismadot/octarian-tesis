@@ -12,6 +12,14 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import  Dialog, {
+        DialogActions,
+        DialogContent,
+        DialogContentText,
+        DialogTitle,
+  } from 'material-ui/Dialog';
+  import TextField from 'material-ui/TextField';
+
 
 const styles = {
   root: {
@@ -26,26 +34,43 @@ const styles = {
   },
 };
 
-function ButtonAppBar(props) {
-  const { classes } = props;
-  return (
+class ButtonAppBar extends Component  {
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+  state = {
+    open: false,
+    password:'',
+    name:'',
+  };
+    handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
+  render(){
+    const { classes,fullScreen } = this.props;
+    return (
       <AppBar position="static" className={classes.root}>
         <Col md={12} xs={12}>
           <Toolbar>
             <Col md={4} xs={4}>
               <Row start='xs'>
-                <NavLink activeClassName='Menu-link--active' className='Menu-link' exact to={ routeCodes.HOME }>
+                <NavLink activeClassName='Menu-link--active' className='Menu-link--active' exact to={ routeCodes.HOME }>
                   <Col md={4} xs={4} >
-                    <Typography type="title" color="inherit" className={classes.flex}>
-                      explorar
-                    </Typography>
+                    <Button color="inherit">explorar</Button>
                   </Col>
                 </NavLink>
                 <Col md={8} xs={8}>
-                  <NavLink activeClassName='Menu-link--active' className='Menu-link' to={ routeCodes.PEOPLE }>
-                    <Typography type="title" color="inherit"  className={classes.flex}>
-                          empieza tu proyecto
-                    </Typography>
+                  <NavLink activeClassName='Menu-link--active' className='Menu-link--active' to={ routeCodes.REGISTERPROJECT }>
+                  <Button color="inherit">empieza tu proyecto</Button>
                   </NavLink>
                 </Col>
               </Row>
@@ -54,7 +79,7 @@ function ButtonAppBar(props) {
              <Row center="xs">
                 <Col xs={6} md={6}>
                   <Typography type="title" color="inherit" className={classes.flex}>
-                    ovum
+                  OVUM
                   </Typography>
                 </Col>
              </Row>
@@ -62,19 +87,57 @@ function ButtonAppBar(props) {
             <Col xs={4} md={4}>
               <Row end="xs">
                 <Col xs={12} md={12}>
-                  <Button color="inherit">Login</Button>
+                  <Button onClick={this.handleClickOpen} color="inherit">Login</Button>
+                  <Button onClick={this.handleClickOpen} color="inherit">registrar</Button>
                 </Col>
               </Row>
             </Col>
           </Toolbar>
         </Col>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="form-dialog-title"
+          fullScreen={fullScreen}
+        >
+          <DialogTitle id="form-dialog-title">Login</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              para hacer login por favor ingrese su email y contrasena
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Email"
+              type="email"
+              fullWidth
+              onChange={this.handleChange('name')}
+            />
+            <TextField
+              autoFocus
+              margin="dense"
+              id="password"
+              label="Contrasena"
+              type="password"
+              fullWidth
+              onChange={this.handleChange('pasword')}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={this.handleClose} color="primary">
+              Login
+            </Button>
+          </DialogActions>
+        </Dialog>
       </AppBar>
-  );
+    );
+  }
 }
 
-ButtonAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(ButtonAppBar);
     {/*

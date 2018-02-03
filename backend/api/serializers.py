@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('email', 'is_staff', 'first_name', 'last_name')
 
-
+        
 class CategorysProjectsSerializers(serializers.ModelSerializer):
     class Meta:
       model = CategorysProjects
@@ -32,4 +32,16 @@ class ProjectSerializers(serializers.ModelSerializer):
 class VerificationSerializers(serializers.ModelSerializer):
     class Meta:
       model = Verification
+      fields = '__all__'
+
+
+class ProfileSerializers(serializers.ModelSerializer):
+    class Meta:
+      model = Profiles
+      fields = '__all__'
+
+
+class CommentSerializers(serializers.ModelSerializer):
+    class Meta:
+      model = Comments
       fields = '__all__'

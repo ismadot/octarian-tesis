@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import Typography from 'material-ui/Typography';
+
 import { getProjects } from 'actions/projects';
 
 import { Row, Col } from 'react-flexbox-grid';
 import Markdown from 'react-markdown';
-import {Twemoji, toArray} from 'react-emoji-render';
 import ReactEmoji from 'react-emoji';
 import 'github-markdown.css'
+//import {Twemoji, toArray} from 'react-emoji-render';
 
 
 @connect(state => ({
@@ -61,14 +63,41 @@ export default class Project extends Component {
 
     return (
         <Col xs={12} className='Project'>
-          <h1>proyecto</h1><br/>
-          <div className='People-list'>
-            { dataProjects && dataProjects.data.data[0].name }<br/>
-          </div>
-          <div className="markdown-body">
-            { dataProjects && this.renderDescription() }<br/>
-            <br/>
-          </div>
+          <br/>
+          <Row center="xs">
+            <Col xs={6} >
+              <Typography type="display4" align="center" color='inherit' >
+                { dataProjects && dataProjects.data.data[0].name }<br/>
+              </Typography>
+            </Col>
+          </Row>
+          <br/>
+          <Row center="xs">
+            <Col xs={6} >
+             <Row start="xs">
+              <Col xs={12} >
+              <div className="markdown-body">
+                { dataProjects && this.renderDescription() }<br/>
+                <br/>
+              </div>
+              </Col>
+            </Row>
+            </Col>
+              hola
+          </Row>
+          <Row center="xs">
+            <Col xs={6} >
+             <Row start="xs">
+              <Col xs={12} >
+              <div >
+              Comentarios
+                <br/>
+                <br/>
+              </div>
+              </Col>
+            </Row>
+            </Col>
+          </Row>
         </Col>
     );
   }

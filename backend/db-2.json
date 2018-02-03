@@ -1,0 +1,260 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$cyXE4FrZUTSu$x52kF1p2jvj0+jq/qDPPkxkLjdO+4bUlmKPL2VnVC6M=",
+    "last_login": "2018-02-02T16:53:11.437Z",
+    "is_superuser": true,
+    "username": "isma",
+    "first_name": "",
+    "last_name": "",
+    "email": "cesar.23.1995@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2018-01-23T03:09:28.668Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$7JiPPjsnIMtH$gz7OMyMVavsJ7sJyN9bmEBlheZoiqWPI/+mRrPW4C38=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mirio",
+    "first_name": "",
+    "last_name": "",
+    "email": "mirio@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-01-27T16:45:01.573Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 1,
+  "fields": {
+    "name": "Arte",
+    "state": true,
+    "description": "proyectos de arte",
+    "icon": "ios-color-palette-outline",
+    "slug": "arte",
+    "created_date": "2018-01-28T00:07:24.091Z",
+    "modified_date": "2018-02-02T16:55:05.668Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 2,
+  "fields": {
+    "name": "Cultura",
+    "state": true,
+    "description": "awdawdawd",
+    "icon": "ios-musical-notes-outline",
+    "slug": "cultura",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-02-02T16:56:19.985Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 3,
+  "fields": {
+    "name": "Agropecuario",
+    "state": true,
+    "description": "awdawdawd",
+    "icon": "ios-bonfire-outline",
+    "slug": "agropecuario",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-02-02T17:01:03.670Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 4,
+  "fields": {
+    "name": "Tecnologia",
+    "state": true,
+    "description": "awdawdawd",
+    "icon": "md-laptop",
+    "slug": "tecnologia",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-02-02T16:56:53.281Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 5,
+  "fields": {
+    "name": "Arquitectura",
+    "state": true,
+    "description": "awdawdawd",
+    "icon": "ios-construct-outline",
+    "slug": "arquitectura",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-02-02T16:54:47.701Z"
+  }
+},
+{
+  "model": "projects.categorysprojects",
+  "pk": 6,
+  "fields": {
+    "name": "Recreacion",
+    "state": true,
+    "description": "awdawdawd",
+    "icon": "ios-partly-sunny-outline",
+    "slug": "recreacion",
+    "created_date": "2018-01-28T00:07:42.921Z",
+    "modified_date": "2018-02-02T16:56:39.568Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "Category": 1,
+    "name": "holass",
+    "description": "awdawdwdwadwad",
+    "file": "Proyectos/arbol_prelaciones_informatica_UNERG_2016.pdf",
+    "image": "",
+    "slug": "holass",
+    "state": true,
+    "created_date": "2018-01-28T01:34:16.846Z",
+    "modified_date": "2018-01-28T01:34:16.846Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "Category": 2,
+    "name": "zombieipsum",
+    "description": "Zombies reversus ab inferno, nam malum cerebro. De carne animata corpora quaeritis. Summus sit\u200b\u200b, morbo vel maleficia? De Apocalypsi undead dictum mauris. Hi mortuis soulless creaturas, imo monstra adventus vultus comedat cerebella viventium. Qui offenderit rapto, terribilem incessu. The voodoo sacerdos suscitat mortuos comedere carnem. Search for solum oculi eorum defunctis cerebro. Nescio an Undead zombies. Sicut malus movie horror.",
+    "file": "Proyectos/arbol_prelaciones_informatica_UNERG_2016.pdf",
+    "image": "",
+    "slug": "zombieipsum",
+    "state": true,
+    "created_date": "2018-01-28T01:34:16.846Z",
+    "modified_date": "2018-01-28T01:34:16.846Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "Category": 3,
+    "name": "batman-ipsum",
+    "description": "Na na na na na na Batman! Batman! Batman! na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na naNa na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na Batman! na na na na na na na na na Batman! na na na na na na na na na na na na Batman! na na na na na na na na na na na na Batman! na na na Na na na na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na na na na na na na Na na na na na na na na na na na na na na na na na na na na na Batman! na na na Batman! na na na na na na na na na na na na na na na na na na Batman! na na na na na na Batman! Na na na na na na na na na na na na na na na na na na Na na na Batman! na na na na na na na na na na na na na na na na na na Batman! na na na Na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na na Batman! na na na na na na na na na Batman! Batman! na na na na na na na na na na na na na na na na na na Na na na Batman! Batman! na na na Batman! na na na Batman! na na na na na na na na na Batman! na na na na na na na na na na na na na na na na na na na na na na na na",
+    "file": "Proyectos/arbol_prelaciones_informatica_UNERG_2016.pdf",
+    "image": "Images/SnvTkUv_sClZDuB.jpg",
+    "slug": "batman-ipsum",
+    "state": true,
+    "created_date": "2018-01-28T01:34:16.846Z",
+    "modified_date": "2018-02-02T16:54:20.721Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "Category": 3,
+    "name": "las estrellas son legion",
+    "description": "# Prueba Tecnica FrontEnd-Grability\r\n\r\n## Descripcion.\r\n\r\n\tLa app a sido deasrrollado implementando las diversas tecnologias destacando:\r\n\r\n- [x] [WebPack2](https://webpack.js.org/)\r\n\r\n- [x] [React.js](https://facebook.github.io/react/)\r\n- [x] [Redux](http://es.redux.js.org/)\r\n- [x] [Redux-thunk](https://github.com/gaearon/redux-thunk)\r\n\r\n- [x] [Sass](https://sass-lang.com)\r\n- [x] [Yarn](https://yarnpkg.com/lang/en/)\r\n- [x] [Npm](https://www.npmjs.com/)\r\n\r\n- [x] [Git](https://github.com/)\r\n\r\n\tUn especial agradecimiento a:\r\n\r\n[marvin](https://github.com/workco/marvin)\r\n>Asombroso boilerplate facil, ligero, increible.\r\n>una gran herramienta.\r\n\r\n[Erifranck Nu\u00f1ez](https://www.linkedin.com/in/erifranck-nu%C3%B1ez-948a32b7/)\r\n>Maestro, asesor y amigo.\r\n\r\n## Instrucciones del aplicativo.\r\n\r\n\tEs necesario tener instalado:\r\n- [nodeJs](https://nodejs.org/es/)\r\n- [Sass](https://sass-lang.com)\r\n- [yarn](https://yarnpkg.com/lang/en/)\r\n- [git](https://github.com/)\r\n\r\n### Pasos para su instalacion:\r\n \r\n - Pocicionarnos en una carpe de nuestra elccion para este ejemplo Documentos.\r\n - Clonar el repositorio [aqui](https://github.com/almagedon/grability-test)\r\n - Entrar en el repositorio creado\r\n - instalar los paquetes pertinentes por npm o yarn\r\n - por ultimo correr el servidor de nuesta aplicacion \r\n\r\n```\r\n$ cd Documentos\r\n$ git clone git@github.com:almagedon/grability-test.git\r\n$ cd grability-test\r\n$ npm install\r\n$ npm run dev\r\n```\r\n\r\n### Arbol de directorios:\r\n\u2500 grability-test  \r\n    \u251c\u2500\u2500 package.json  \r\n    \u251c\u2500\u2500 README.md  \r\n    \u251c\u2500\u2500 source  \r\n    \u2502\u00a0\u00a0 \u251c\u2500\u2500 assets // iconos utilizados para esta aplicacion  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 icons  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 circle.svg  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 square.svg  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 triangle.svg  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 img  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 book1.jpg  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 book2.jpg  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 btn_arrow_left.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 btn_arrow_right.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 btn-close.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 btn-delete.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 btn-favourites-default.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 btn-favourites-primary.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 characters.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 favourites.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 grability-logo.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 link-arrow.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 Marvel-logo.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 search.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 shopping-cart-primary.png  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 svgExample.svg  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2514\u2500\u2500 workco-logo.svg  \r\n    \u2502\u00a0\u00a0 \u251c\u2500\u2500 index.html  \r\n    \u2502\u00a0\u00a0 \u251c\u2500\u2500 js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 actions  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 appBarSearch.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 app.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 appModalData.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 api  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 index.js //archivo con el que se hacen las peticiones a la api  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 components // componentes que pertenecen a las vistas  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 Containers  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroCard.jsx // componente donde se resenta cada heroe  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroCard.scss  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroFavorites.jsx // componentes para la seccion de favoritos  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroModal.jsx // modal para agregar a favoritos  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroModal.scss  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroMoreContiner.jsx  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 HeroMoreContiner.scss  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 NavSortCharacters.js // seaccion para  ordenar  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 Global  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 containers  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2502\u00a0\u00a0 \u2514\u2500\u2500 Search.jsx  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 Footer.jsx // footer  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 Icon.jsx  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2514\u2500\u2500 NavBar.jsx // navbar y buscador  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 dev  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 logger-exports.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 logger.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 index.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 reducers  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u251c\u2500\u2500 app.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 index.js  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0 \u2514\u2500\u2500 views  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 About  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2502\u00a0\u00a0 \u2514\u2500\u2500 index.jsx  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 App  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2502\u00a0\u00a0 \u2514\u2500\u2500 index.jsx  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u251c\u2500\u2500 Dashboard // vista principal  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2502\u00a0\u00a0 \u251c\u2500\u2500 index.jsx  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2502\u00a0\u00a0 \u2514\u2500\u2500 styles.scss  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0     \u2514\u2500\u2500 NotFound  \r\n    \u2502\u00a0\u00a0 \u2502\u00a0\u00a0         \u2514\u2500\u2500 index.jsx  \r\n    \u2502\u00a0\u00a0 \u2514\u2500\u2500 scss // scss base  \r\n    \u2502\u00a0\u00a0     \u251c\u2500\u2500 app.scss  \r\n    \u2502\u00a0\u00a0     \u2514\u2500\u2500 base  \r\n    \u2502\u00a0\u00a0         \u251c\u2500\u2500 _app.scss  \r\n    \u2502\u00a0\u00a0         \u251c\u2500\u2500 _breakpoints.scss  \r\n    \u2502\u00a0\u00a0         \u2514\u2500\u2500 _normalize.scss  \r\n    \u251c\u2500\u2500 webpack.config.js  \r\n    \u2514\u2500\u2500 yarn.lock",
+    "file": "Proyectos/Jessi_wwHDuVf.pdf",
+    "image": "Images/images_lR0mHLL.jpeg",
+    "slug": "las-estrellas-son-legion",
+    "state": true,
+    "created_date": "2018-02-02T17:07:07.301Z",
+    "modified_date": "2018-02-02T17:07:07.301Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "Category": 3,
+    "name": "amanezer rojo",
+    "description": "# Marvin \u2605\u2605\r\n\r\nUniversal React and Redux, Webpack boilerplate.\r\n\r\nMarvin is internal project by [Work & Co](https://work.co).\r\nWe love React and use it a lot. So Marvin is meant to be a starting point for our React projects.\r\nBut as we love open source too, it is publicly available for anyone interested in using it.\r\n\r\n![Marvin](/marvin.jpg)\r\n\r\nName comes from a fictional character [Marvin](https://en.wikipedia.org/wiki/Marvin_(character)), android from the [The Hitchhiker's Guide to the Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy) book as a homage to it's author [Douglas Adams](https://en.wikipedia.org/wiki/Douglas_Adams).\r\n\r\n**Please note** that v1.0.0 switched to [redux-saga](https://github.com/redux-saga/redux-saga) from `redux-thunk`\r\nand [postcss](https://github.com/postcss/postcss) from `scss`.\r\n\r\n## Table of contents\r\n\r\n* [What is this?](#user-content-what-is-this)\r\n* [Features](#user-content-features)\r\n* [Setup](#user-content-setup)\r\n* [npm tasks](#user-content-npm-tasks)\r\n* [Running client in dev mode](#user-content-running-client-in-dev-mode)\r\n* [Build client (production)](#user-content-build-client-production)\r\n* [Running client in preview production mode](#user-content-running-client-in-preview-production-mode)\r\n* [Universal dev mode](#user-content-universal-dev-mode)\r\n* [Universal build (production)](#user-content-universal-build-production)\r\n* [Removing server rendering related stuff](#user-content-removing-server-rendering-related-stuff)\r\n* [Browser support](#user-content-browser-support)\r\n* [Known issues](#user-content-known-issues)\r\n* [Linting](#user-content-linting)\r\n* [Misc](#user-content-misc)\r\n* [Changelog](CHANGELOG.md)\r\n\r\n## What is this?\r\n\r\nOpinionated boilerplate for kicking off React/Redux applications.\r\n\r\nIt includes complete, minimal react app.\r\nBy complete we mean it has examples for:\r\n\r\n- components (both container/views and regular ones)\r\n- routes\r\n- reducers (redux + redux-saga)\r\n- actions (both sync and async),\r\n- postcss (with autoprefixer)\r\n- dummy API (using awesome [Star Wars API](https://swapi.co/))\r\n- assets (images + inline SVGs)\r\n\r\n## Features\r\n\r\n- [x] React\r\n- [x] React router v4\r\n- [x] Redux\r\n- [x] Redux-Saga\r\n- [x] Redux DevTools (you need to have [browser extension](https://github.com/zalmoxisus/redux-devtools-extension) installed)\r\n- [x] Universal rendering with async server data\r\n- [x] Webpack 3 (development and production config)\r\n- [x] Hot Module Replacement\r\n- [x] Immutable reducer data\r\n- [x] Babel - static props, decorators\r\n- [x] PostCSS (with autoprefixing)\r\n- [x] Linting\r\n- [x] Git hooks - lint before push\r\n- [x] Tree shaking build\r\n- [x] Import SVGs as React components\r\n\r\n## TODO\r\n\r\n- [ ] Internationalization\r\n- [ ] Tests\r\n\r\n\r\n## Setup\r\n\r\nTested with node 8.5.x\r\n\r\n```\r\nnpm install\r\n```\r\n\r\n## npm tasks\r\n\r\n* `start` - starts client app only in development mode, using webpack dev server\r\n* `client:dev` - same as `start`\r\n* `client:build` - builds client application\r\n* `client:preview` - runs client application in *production* mode, using webpack dev server (use for local testing of the client production build)\r\n* `server:dev` - starts server app only in development mode (use for testing server responses)\r\n* `universal:dev` - runs both server and client in watch mode, automatically restarts server on changes\r\n* `universal:build` - builds both server and client\r\n\r\nThere are other tasks as well which shouldn't be used on their own.\r\n\r\n## Running client in dev mode\r\n\r\n```sh\r\nnpm start\r\n# or\r\nnpm run client:dev\r\n```\r\n\r\nVisit `http://localhost:8080/` from your browser of choice.\r\nServer is visible from the local network as well.\r\n\r\n## Build client (production)\r\n\r\nBuild will be placed in the `build` folder.\r\n\r\n```\r\nnpm run client:build\r\n```\r\n\r\nIf your app is not running on the server root you should change `publicPath` at two places.\r\n\r\nIn `webpack.config.js` (ATM line 76):\r\n\r\n```js\r\noutput: {\r\n  path: buildPath,\r\n  publicPath: '/your-app/',\r\n  filename: 'app-[hash].js',\r\n},\r\n```\r\n\r\nand in `source/js/constants/routes` (line 1):\r\n\r\n```js\r\nconst publicPath = '/your-app/'; // Don't forget the trailing slash (`/`).\r\n```\r\n\r\nDevelopment server will be available at `http://localhost:8080/your-app/`.\r\n\r\n## Running client in preview production mode\r\n\r\nThis command will start webpack dev server, but with `NODE_ENV` set to `production`.\r\nEverything will be minified and served.\r\nHot reload will not work, so you need to refresh the page manually after changing the code.\r\n\r\n```\r\nnpm run client:preview\r\n```\r\n\r\n## Universal dev mode\r\n\r\n```\r\nnpm run universal:dev\r\n```\r\n\r\nVisit `http://localhost:8080/` from your browser of choice.\r\nBoth server and client will be rebuilt on change. Again no hot module reload.\r\n\r\n## Universal build (production)\r\n\r\n```\r\nnpm run universal:build\r\n```\r\n\r\ncopy `package.json` and `build` folder to your production server\r\n\r\ninstall only production dependencies and run server\r\n\r\n```\r\nnpm install --production\r\n\r\nnode ./build/server.js\r\n```\r\n\r\n## Removing server rendering related stuff\r\n\r\nIf you are not using server rendering first run:\r\n\r\n```sh\r\nnode remove-universal.js\r\n```\r\n\r\nthen you have to manually remove unused code from\r\n`source/js/config/store.js` which is marked with:\r\n\r\n```\r\n// Remove if you are not using server rendering.\r\n```\r\n\r\n#### Remove unused tasks\r\n\r\nYou should remove unused tasks from `package.json` and unused params from `source/js/config/store.js` too.\r\nClient app is going to work without this but it is better to remove them as they just create noise.\r\n\r\nIf anyone is willing to automate this, help will be greatly appreciated.\r\n\r\n## Browser support\r\n\r\nModern browsers and IE10+.\r\n\r\n## Known issues\r\n\r\nThese are known bugs that affect **development mode only**.\r\n\r\n* In some versions of Safari `cheap-eval-source-map` results in\r\n  \"Can't find variable: SockJS\".\r\n  To solve it change `webpack.config.js`:\r\n\r\n  ```js\r\n  // from\r\n  devtool: IS_PRODUCTION ? false : 'cheap-eval-source-map',\r\n  // to\r\n  devtool: IS_PRODUCTION ? false : 'source-map',\r\n  ```\r\n\r\n* Hot module reload is not working in IE 10.\r\n  To test the app in development mode you'll need to change\r\n  `inline` to `false` in `webpack/dev-server.js`\r\n\r\n  ```js\r\n    inline: false, // Change to false for IE10 dev mode\r\n  ```\r\n\r\n\r\n## Linting\r\n\r\nESLint is set up by extending [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb),\r\nwith some options overridden to our preferences.\r\n\r\n```\r\nnpm run lint\r\n```\r\n\r\n### Linting Git hooks\r\n\r\nLinting pre-push hook is not enabled by default.\r\nIt will prevent the push if lint task fails,\r\nbut you need to add it manually by running:\r\n\r\n```\r\nnpm run hook-add\r\n```\r\n\r\nTo remove it, run this task:\r\n\r\n```\r\nnpm run hook-remove\r\n```\r\n\r\n## Misc\r\n\r\n### Async server data\r\n\r\nDocumentation is WIP, for now follow the example in `source/js/server.js`.\r\n\r\n### Importing images in CSS\r\n\r\nPlease note that paths to images in CSS files are relative to `source/css/index.css` as it imports all of the other `.css` files.\r\n\r\n```\r\n.BackgroundImgExample {\r\n  background-image: url(../assets/img/book1.jpg);\r\n}\r\n```\r\n\r\n### Importing SVGs as components\r\n\r\nJust import your `.svg` files from the `source/assets/svg/` folder, and you are good to go.\r\n\r\n```\r\nimport CircleIcon from 'svg/circle.svg';\r\n\r\n// then in your render\r\n\r\n<CircleIcon />\r\n```",
+    "file": "Proyectos/go-document.pdf",
+    "image": "Images/01.jpg",
+    "slug": "amanezer-rojo",
+    "state": true,
+    "created_date": "2018-02-02T17:10:36.415Z",
+    "modified_date": "2018-02-02T17:10:36.415Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "Category": 3,
+    "name": "domo arigato mr roboto",
+    "description": "# react-markdown\r\n\r\nRenders Markdown as pure React components.\r\n\r\n[![npm version](https://img.shields.io/npm/v/react-markdown.svg?style=flat-square)](http://browsenpm.org/package/react-markdown)[![Build Status](https://img.shields.io/travis/rexxars/react-markdown/master.svg?style=flat-square)](https://travis-ci.org/rexxars/react-markdown)[![Code Climate](https://img.shields.io/codeclimate/github/rexxars/react-markdown.svg?style=flat-square)](https://codeclimate.com/github/rexxars/react-markdown/)\r\n\r\nDemo available at https://rexxars.github.io/react-markdown/\r\n\r\n---\r\n\r\nreact-markdown is proudly sponsored by\r\n\r\n<a href=\"https://www.sanity.io/\" rel=\"nofollow\" target=\"_blank\">\r\n  <img src=\"https://www.sanity.io/static/images/logo_red.svg?v=2\" width=\"300\"><br />\r\n  Sanity: The Headless CMS Construction Kit\r\n</a>\r\n\r\n---\r\n\r\n## Installing\r\n\r\n```\r\nnpm install --save react-markdown\r\n```\r\n\r\n## Basic usage\r\n\r\n```js\r\nconst React = require('react')\r\nconst ReactDOM = require('react-dom')\r\nconst ReactMarkdown = require('react-markdown')\r\n\r\nconst input = '# This is a header\\n\\nAnd this is a paragraph'\r\n\r\nReactDOM.render(\r\n  <ReactMarkdown source={input} />,\r\n  document.getElementById('container')\r\n)\r\n```\r\n\r\n## Notes\r\n\r\nIf you don't need to render HTML, this component does not use `dangerouslySetInnerHTML` at all -\r\nthis is a Good Thing\u2122.\r\n\r\n## Inline HTML is broken\r\n\r\nInline HTML is currently broken for any tags that include attributes. A vague idea of how to fix\r\nthis has been planned, but if you're feeling up to the task, create an issue and let us know!\r\n\r\n## Options\r\n\r\n* `source` - _string_ The Markdown source to parse (**required**)\r\n* `className` - _string_ Class name of the container element (default: `''`).\r\n* `escapeHtml` - _boolean_ Setting to `false` will cause HTML to be rendered (see note above about\r\n  broken HTML, though). Be aware that setting this to `false` might cause security issues if the\r\n  input is user-generated. Use at your own risk. (default: `true`).\r\n* `skipHtml` - _boolean_ Setting to `true` will skip inlined and blocks of HTML (default: `false`).\r\n* `sourcePos` - _boolean_ Setting to `true` will add `data-sourcepos` attributes to all elements,\r\n  indicating where in the markdown source they were rendered from (default: `false`).\r\n* `allowedTypes` - _array_ Defines which types of nodes should be allowed (rendered). (default: all\r\n  types).\r\n* `disallowedTypes` - _array_ Defines which types of nodes should be disallowed (not rendered).\r\n  (default: none).\r\n* `unwrapDisallowed` - _boolean_ Setting to `true` will try to extract/unwrap the children of\r\n  disallowed nodes. For instance, if disallowing `Strong`, the default behaviour is to simply skip\r\n  the text within the strong altogether, while the behaviour some might want is to simply have the\r\n  text returned without the strong wrapping it. (default: `false`)\r\n* `allowNode` - _function_ Function execute if in order to determine if the node should be allowed.\r\n  Ran prior to checking `allowedTypes`/`disallowedTypes`. Returning a truthy value will allow the\r\n  node to be included. Note that if this function returns `true` and the type is not in\r\n  `allowedTypes` (or specified as a `disallowedType`), it won't be included. The function will\r\n  receive three arguments argument (`node`, `index`, `parent`), where `node` contains different\r\n  properties depending on the node type.\r\n* `transformLinkUri` - _function|null_ Function that gets called for each encountered link with a\r\n  single argument - `uri`. The returned value is used in place of the original. The default link URI\r\n  transformer acts as an XSS-filter, neutralizing things like `javascript:`, `vbscript:` and `file:`\r\n  protocols. If you specify a custom function, this default filter won't be called, but you can\r\n  access it as `require('react-markdown').uriTransformer`. If you want to disable the default\r\n  transformer, pass `null` to this option.\r\n* `transformImageUri` - _function|null_ Function that gets called for each encountered image with a\r\n  single argument - `uri`. The returned value is used in place of the original.\r\n* `renderers` - _object_ An object where the keys represent the node type and the value is a React\r\n  component. The object is merged with the default renderers. The props passed to the component\r\n  varies based on the type of node.\r\n\r\n## Node types\r\n\r\nThe node types available are the following, and applies to both `renderers` and\r\n`allowedTypes`/`disallowedTypes`:\r\n\r\n* `root` - Root container element that contains the rendered markdown\r\n* `break` - Hard-break (`<br>`)\r\n* `paragraph` - Paragraph (`<p>`)\r\n* `emphasis` - Emphasis (`<em>`)\r\n* `strong` - Strong/bold (`<strong>`)\r\n* `thematicBreak` - Horizontal rule / thematic break (`<hr>`)\r\n* `blockquote` - Block quote (`<blockquote>`)\r\n* `delete` - Deleted/strike-through (`<del>`)\r\n* `link` - Link (`<a>`)\r\n* `image` - Image (`<img>`)\r\n* `linkReference` - Link (through a reference) (`<a>`)\r\n* `imageReference` - Image (through a reference) (`<img>`)\r\n* `table` - Table (`<table>`)\r\n* `tableHead` - Table head (`<thead>`)\r\n* `tableBody` - Table body (`<tbody>`)\r\n* `tableRow` - Table row (`<tr>`)\r\n* `tableCell` - Table cell (`<td>`/`<th>`)\r\n* `list` - List (`<ul>`/`<ol>`)\r\n* `listItem` - List item (`<li>`)\r\n* `definition` - Definition (not rendered by default)\r\n* `heading` - Heading (`<h1>`-`<h6>`)\r\n* `inlineCode` - Inline code (`<code>`)\r\n* `code` - Block of code (`<pre><code>`)\r\n* `html` - HTML node (Best-effort rendering)\r\n\r\nNote: Disallowing a node will also prevent the rendering of any children of that node, unless the\r\n`unwrapDisallowed` option is set to `true`. Eg, disallowing a paragraph will not render it's\r\nchildren text nodes.\r\n\r\n## Developing\r\n\r\n```bash\r\ngit clone git@github.com:rexxars/react-markdown.git\r\ncd react-markdown\r\nnpm install\r\nnpm test\r\n```\r\n\r\n## License\r\n\r\nMIT \u00a9 [Espen Hovlandsdal](https://espen.codes/)",
+    "file": "Proyectos/Jessi_BYkZvWW.pdf",
+    "image": "Images/NLSl3_NW26lEg.jpg",
+    "slug": "domo-arigato-mr-roboto",
+    "state": true,
+    "created_date": "2018-02-02T17:13:34.122Z",
+    "modified_date": "2018-02-02T17:13:34.122Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 7,
+  "fields": {
+    "user": 2,
+    "Category": 5,
+    "name": "El principe de las espinas",
+    "description": "# A React/Redux Authentication Demo Site, using DjangoRestFramework/DjangoRestAuth\r\n\r\n-It is a good demonstration of how to integrate react/redux with django-rest-framework to build\r\na fully functional web application. \r\n\r\n-It can also serve as a starter template for building a variety\r\nof web applications that needs authentication.\r\n\r\n## Backend:\r\n   - django 1.11\r\n   - django-rest-framework 3.7\r\n   - django-rest-auth 0.9.2\r\n\r\n## Frontend:\r\n   - webpack\r\n   - React v16\r\n   - React Router 4\r\n   - Redux\r\n   - reactstrap (Bootstrap 4 components)\r\n\r\n\r\n## How to use it\r\n\r\nClone the repository, which includes both backend and frontend.\r\n\r\n## Backend: Django, Django Rest Framework and Django-Rest-Auth\r\n\r\ncd to django_backend directory\r\n\r\ncreate your virtualenv and activate (python3) \r\nunder win: python -m venv 'envname'\r\n\r\nrun `pip install -r requirements.txt` to install all django dependencies.\r\n\r\nrun `python manage.py migrate` to migrate database.\r\n\r\nrun `python manage.py runserver` to start django development server to serve the demo site.\r\n\r\nthe backend server should be localhost:8000.\r\n\r\n## Frontend: React/Redux\r\n\r\nall JavaScript and html source code are within react_src directory, bundle.js will be generated in \r\nstatic/js directory. index.html will be generated in templates/project directory.\r\n\r\nrun `npm install` to install all node dependencies.\r\n\r\nrun `npm run start` to start the webpack dev server for frontend app.\r\n\r\nnow you can go to localhost:8083 to access the main page of the demo site.\r\n\r\n## Issue Reporting\r\n\r\nIf you have found a bug or feature request, please report them at the repository issues section.",
+    "file": "Proyectos/Cheo_QkobOAI.pdf",
+    "image": "Images/webpack_logo_on_white_bg_940x296.png",
+    "slug": "el-principe-de-las-espinas",
+    "state": true,
+    "created_date": "2018-02-02T17:22:01.232Z",
+    "modified_date": "2018-02-02T17:22:01.232Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "Category": 3,
+    "name": "Elantris",
+    "description": "# channels-obstruction\r\nA simple game of Obstruction created to explore Django + Django Channels + ReactJS\r\nBlog Post and Tutorial at: [http://www.codyparker.com/django-channels-with-react](http://www.codyparker.com/django-channels-with-react)\r\n\r\n\r\n## Synopsis\r\n\r\nI started this project to explore the [Django Channels](https://github.com/django/channels), which is an upcoming core app that adds asynchronous WebSocket support to the wonderful [Django Framework](http://www.djangoproject.com). Channels makes it very easy to build \"real-time\" apps in pure Django and Python, providing a great way to develop applications that require features such as \"real-time\" collaboration or chat for example.  \r\n\r\n[Obstruction](http://www.papg.com/show?2XMX) is a 2-player pen and paper game which involves players taking turns claiming free spots on a grid. The spot they choose, and all surrounding spots are then claimed for that player and can no longer be claimed by another player. The play continues back-and-forth until there are no free spots to claim. The last player to successfully claim a spot, wins the game.\r\n\r\nThis project also uses [React](https://facebook.github.io/react/) to handle the reactive, client-side components. I picked React because I like it, but it could be swapped out with Angular/Vue/Knockout/etc....\r\n\r\n## Features\r\n\r\n* Full game functionality:\r\n    * Authentication - Signup / Login\r\n    * Game Lobby with live updating list of available games\r\n    * Ability to create a game that will show up in other users' availiable games list\r\n    * Gameboard that enforces Obstruction rules and allows players to take turns and see the results in real-time\r\n    * Game log that tracks all moves and reports them live as they occur\r\n    * Players can chat in the game log\r\n* Lobby and Gameboard are made up of ReactJS components on the client-side\r\n* Examples of how to mix standard Django templating with ReactJS\r\n* Webpack integration to create separate bundles needed for different parts of the application\r\n* Django Rest Framework used to help serialize data needed by React as well as provides API endpoints for client-side data calls\r\n* Mixed use of DRF, standard Django context sent from the view, as well as communication through channels to demostrate multiple ways to interact with data and the Django backend\r\n\r\n## Requirements\r\n\r\n* Django >= 1.9\r\n* [Django Channels](https://github.com/django/channels)\r\n* [Django Rest Framework](http://www.django-rest-framework.org/)\r\n* [Django Webpack Loader](https://github.com/owais/django-webpack-loader)\r\n* Node & Node Package Manager\r\n\r\n## Installation\r\n\r\n* Fork and clone this repository\r\n* Create a Python virtual environemnt\r\n* In that environment, run ```pip install -r requirements.txt``` inside your project\r\n* Install node modules with ```npm install```\r\n* Create the local database with ```python manage.py migrate```\r\n* Run webpack to build the components with ```webpack``` \r\n* Run Django development server on port 8080 - ```python manage.py runserver 8080```",
+    "file": "Proyectos/curriculum_vitae_jA0iuK6.pdf",
+    "image": "Images/MV5BMTU2MjY2NDc0M15BMl5BanBnXkFtZTgwNzQ5MzczMTI._V1_SY1000_CR006751000_AL_.jpg",
+    "slug": "elantris",
+    "state": true,
+    "created_date": "2018-02-02T17:24:05.736Z",
+    "modified_date": "2018-02-02T17:24:05.736Z"
+  }
+},
+{
+  "model": "projects.projects",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "Category": 3,
+    "name": "Elantris",
+    "description": "# channels-obstruction\r\nA simple game of Obstruction created to explore Django + Django Channels + ReactJS\r\nBlog Post and Tutorial at: [http://www.codyparker.com/django-channels-with-react](http://www.codyparker.com/django-channels-with-react)\r\n\r\n\r\n## Synopsis\r\n\r\nI started this project to explore the [Django Channels](https://github.com/django/channels), which is an upcoming core app that adds asynchronous WebSocket support to the wonderful [Django Framework](http://www.djangoproject.com). Channels makes it very easy to build \"real-time\" apps in pure Django and Python, providing a great way to develop applications that require features such as \"real-time\" collaboration or chat for example.  \r\n\r\n[Obstruction](http://www.papg.com/show?2XMX) is a 2-player pen and paper game which involves players taking turns claiming free spots on a grid. The spot they choose, and all surrounding spots are then claimed for that player and can no longer be claimed by another player. The play continues back-and-forth until there are no free spots to claim. The last player to successfully claim a spot, wins the game.\r\n\r\nThis project also uses [React](https://facebook.github.io/react/) to handle the reactive, client-side components. I picked React because I like it, but it could be swapped out with Angular/Vue/Knockout/etc....\r\n\r\n## Features\r\n\r\n* Full game functionality:\r\n    * Authentication - Signup / Login\r\n    * Game Lobby with live updating list of available games\r\n    * Ability to create a game that will show up in other users' availiable games list\r\n    * Gameboard that enforces Obstruction rules and allows players to take turns and see the results in real-time\r\n    * Game log that tracks all moves and reports them live as they occur\r\n    * Players can chat in the game log\r\n* Lobby and Gameboard are made up of ReactJS components on the client-side\r\n* Examples of how to mix standard Django templating with ReactJS\r\n* Webpack integration to create separate bundles needed for different parts of the application\r\n* Django Rest Framework used to help serialize data needed by React as well as provides API endpoints for client-side data calls\r\n* Mixed use of DRF, standard Django context sent from the view, as well as communication through channels to demostrate multiple ways to interact with data and the Django backend\r\n\r\n## Requirements\r\n\r\n* Django >= 1.9\r\n* [Django Channels](https://github.com/django/channels)\r\n* [Django Rest Framework](http://www.django-rest-framework.org/)\r\n* [Django Webpack Loader](https://github.com/owais/django-webpack-loader)\r\n* Node & Node Package Manager\r\n\r\n## Installation\r\n\r\n* Fork and clone this repository\r\n* Create a Python virtual environemnt\r\n* In that environment, run ```pip install -r requirements.txt``` inside your project\r\n* Install node modules with ```npm install```\r\n* Create the local database with ```python manage.py migrate```\r\n* Run webpack to build the components with ```webpack``` \r\n* Run Django development server on port 8080 - ```python manage.py runserver 8080```",
+    "file": "Proyectos/curriculum_vitae_jA0iuK6.pdf",
+    "image": "Images/MV5BMTU2MjY2NDc0M15BMl5BanBnXkFtZTgwNzQ5MzczMTI._V1_SY1000_CR006751000_AL_.jpg",
+    "slug": "elantris",
+    "state": true,
+    "created_date": "2018-02-02T17:24:05.736Z",
+    "modified_date": "2018-02-02T17:24:05.736Z"
+  }
+}
+]

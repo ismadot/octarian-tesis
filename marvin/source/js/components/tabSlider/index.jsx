@@ -68,33 +68,26 @@ class tabSlider extends Component {
     const { 
       dispatch,
       dataCategorys,
-      loadingCategorys
     } = this.props;    
-    
     if (!dataCategorys) {
       dispatch(getCategorys());
     }
   }
 
-  componentDidUpdate() {
-     const { 
-      dataCategorys,
-    } = this.props;
-     if (dataCategorys) {
-      if(this.state.value == null){
-        this.setState({ 
-          value : 0,
-          list:dataCategorys.data
-         });
-      }
-    }
-  }
-  
-
   renderDataCategorys() {
     const {
       dataCategorys,
     } = this.props;
+      if (dataCategorys) {
+        if(this.state.value == null){
+          console.log(dataCategorys)
+        this.setState({ 
+          value : 0,
+          list:dataCategorys.data
+         });
+        }
+        
+      }
     const tab = dataCategorys.data.map(category => {
               const icon = <Ionicon icon={category.icon}  fontSize="35px" />
               return (<Tab value={ category.index } key={ category.slug } label={category.name} icon={icon} />)
@@ -124,7 +117,7 @@ class tabSlider extends Component {
             onChange={this.handleChange}
             fullWidth
             scrollable
-            scrollButtons="auto"
+            scrollButtons="on"
             indicatorColor="primary"
             textColor="primary"
             centered
