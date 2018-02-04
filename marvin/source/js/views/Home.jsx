@@ -16,12 +16,16 @@ import CircleSvg from 'svg/circle.svg';
 import SquareSvg from 'svg/square.svg';
 import bookImg from 'img/book2.jpg';
 
+import { postProjects } from 'actions/projects';
 
 @connect(state => ({
   counter: state.app.get('counter'),
   loadingAuth: state.auth.get('loadingAuth'),
   errorAuth: state.auth.get('errorAuth'),
   tokenAuth: state.auth.get('tokenAuth'),
+  loadingPostProjects: state.projects.get('loadingPostProjects'),
+  errorPostProjects: state.projects.get('errorPostProjects'),
+  dataPostProjects: state.projects.get('dataPostProjects'),      
 
 }))
 
@@ -31,6 +35,10 @@ export default class Home extends Component {
     errorAuth: PropTypes.string,
     loadingAuth: PropTypes.bool,
     tokenAuth: PropTypes.object,
+    dataPostProjects    :PropTypes.object,
+    errorPostProjects   :PropTypes.string,
+    loadingPostProjects :PropTypes.bool,
+  
 
     // from react-redux connect
     dispatch: PropTypes.func,
@@ -49,9 +57,10 @@ export default class Home extends Component {
   }
 
   handleTesToken = () => {
- 
-axios.defaults.xsrfCookieName = 'csrftoken'
-axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+    const { dispatch } = this.props;
+
+    dispatch(postProjects({"name":"hola"}));
+
   }
   componentWillMount() {
   }
@@ -62,6 +71,9 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken'
       loadingAuth,
       errorAuth,
       tokenAuth,
+      dataPostProjects,
+      errorPostProjects,
+      loadingPostProjects,
     } = this.props;
 
     return (

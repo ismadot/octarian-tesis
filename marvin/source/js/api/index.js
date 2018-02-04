@@ -1,5 +1,9 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
 // Simple API wrapper
+axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+axios.defaults.xsrfCookieName = "Cookie";
 
 const API_URL = 'https://swapi.co/api';
 const BASE_URL ="http://localhost:8000/api/";
@@ -133,6 +137,30 @@ function backendgetAuthToken(url, data = {}, params = {}) {
     }
   });
 }
+function backendPostProject(url, data = {}, params = {}) {
+const csrftoken = Cookies.get('csrftoken');
+  console.log(csrftoken)
+  return axios(BASE_URL+url, {
+    ...params,
+    headers: {
+        'Accept': "application/vnd.api+json;application/json;ident=4",
+        'Content-Type': 'application/vnd.api+json',
+        //'Cookie':"csrftoken=kgSLtGOGaWd9sFF4nYxvdfODxEyZGA3fcgRp0vPmnxTaMkVev0WveecsZO4kfTX7; sessionid=03bn0cnva0x34h9f0mrfl3gc6p2q3081; tabstyle=html-tab"
+        "X-CSRFTOKEN":csrftoken,
+        "X-Requested-With":"XMLHttpRequest"
+
+        //"HTTP_X_CSRFTOKEN":csrftoken,
+        //"XCSRF-TOKEN":csrftoken,
+    },
+    data:{
+      data:{
+        "type": "Projects",
+        "id": "null",
+        "attributes": data,
+      },
+    }
+  });
+}
 function backendGetProjects(url, data = {}, params = {}) {
   return axios(BASE_URL+url, {
     ...params,
@@ -157,4 +185,5 @@ export default {
   getPeople,
   backendgetAuthToken,
   backendGetInfo,
+  backendPostProject,
 };
