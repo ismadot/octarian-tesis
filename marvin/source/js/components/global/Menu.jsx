@@ -63,7 +63,7 @@ class ButtonAppBar extends Component  {
           <Toolbar>
             <Col md={4} xs={4}>
               <Row start='xs'>
-                <NavLink activeClassName='Menu-link--active' className='Menu-link--active' exact to={ routeCodes.HOME }>
+                <NavLink activeClassName='Menu-link--active' className='Menu-link--active' to={ routeCodes.HOME }>
                   <Col md={4} xs={4} >
                     <Button color="inherit">explorar</Button>
                   </Col>
