@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'dev/logger';
+import { persistStore } from 'redux-persist'
 
 import Immutable from 'immutable'; // Remove if you are not using server rendering
 import Serialize from 'remotedev-serialize/immutable'; // Remove if you are not using server rendering
@@ -82,6 +83,6 @@ export default (serverSagas = null, sagaOptions = {}) => {
   // Return store only
   // But as an object for consistency
   return {
-    store,
+    store: persistStore( store ),
   };
 };
