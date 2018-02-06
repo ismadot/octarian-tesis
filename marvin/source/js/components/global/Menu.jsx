@@ -18,8 +18,8 @@ import  Dialog, {
         DialogContentText,
         DialogTitle,
   } from 'material-ui/Dialog';
-  import TextField from 'material-ui/TextField';
-
+import TextField from 'material-ui/TextField';
+import Ionicon from 'react-ionicons'
 
 const styles = {
   root: {
@@ -42,9 +42,13 @@ class ButtonAppBar extends Component  {
     open: false,
     password:'',
     name:'',
+    shake:false,
   };
     handleClickOpen = () => {
     this.setState({ open: true });
+  };
+    shakeIt = () => {
+    this.setState({ shake:!shake });
   };
 
   handleClose = () => {
@@ -56,7 +60,8 @@ class ButtonAppBar extends Component  {
     });
   };
   render(){
-    const { classes,fullScreen } = this.props;
+    const { classes, fullScreen } = this.props;
+    const { shake }=this.state
     return (
       <AppBar position="static" className={classes.root}>
         <Col md={12} xs={12}>
@@ -78,9 +83,14 @@ class ButtonAppBar extends Component  {
             <Col xs={4} md={4}>
              <Row center="xs">
                 <Col xs={6} md={6}>
-                  <Typography type="title" color="inherit" className={classes.flex}>
-                  OVUM
-                  </Typography>
+                    <Typography type="title" color="inherit" className={classes.flex}>
+                <Col xs={12} md={12}>
+                  <Row middle="xs">
+                    <Ionicon icon="ios-egg"  onClick={this.shakeIt} shake={shake} fontSize="35px" color="white"/>
+                      OVUM
+                  </Row>
+                </Col>
+                    </Typography>
                 </Col>
              </Row>
             </Col>

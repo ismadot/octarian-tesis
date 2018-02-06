@@ -40,8 +40,7 @@ const actionsMap = {
       loadingProjects: false,
       dataProjects: action.data.data,
     }));
-  },
-  
+  },  
   [POST_PROJECTS_START]: (state) => {
     return state.merge(Map({
       loadingPostProjects: true,

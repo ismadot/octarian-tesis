@@ -12,7 +12,6 @@ import IconButton from 'material-ui/IconButton';
 import Icon from 'material-ui/Icon';
 
 import { Row, Col } from 'react-flexbox-grid';
-import FileReaderInput from 'react-file-reader-input';
 import FileInput from 'react-simple-file-input';
 
 import Markdown from 'react-markdown';

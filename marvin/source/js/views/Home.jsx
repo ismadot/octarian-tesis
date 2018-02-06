@@ -62,8 +62,7 @@ export default class Home extends Component {
     dispatch(postProjects({"name":"hola"}));
 
   }
-  componentWillMount() {
-  }
+
 
   render() {
     const {

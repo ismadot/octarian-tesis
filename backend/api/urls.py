@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from rest_framework.authtoken import views as drf_views
+from django.forms.utils import flatatt
 from rest_framework import routers
 from .views import *
 from .api import *
@@ -19,4 +19,7 @@ urlpatterns = [
     url(r'^token-auth/', obtain_jwt_token),
     url(r'^token-refresh/', refresh_jwt_token),
     url(r'^token-verify/', verify_jwt_token),
+    #url(r'^rest-auth/', include('rest_auth.urls')),
+    #url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+
 ] + router.urls

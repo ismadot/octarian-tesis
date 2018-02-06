@@ -7,6 +7,7 @@ import Home from 'views/Home';
 import People from 'views/People';
 import Project from 'views/Project';
 import RegisterProject from 'views/RegisterProject';
+import PaginateProjects from 'views/PaginateProjects';
 import NotFound from 'views/NotFound';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -26,6 +27,7 @@ class App extends Component {
                 <Route path={ routeCodes.PEOPLE }           component={ People } />
                 <Route path={ routeCodes.PROJECT+':param'}  component={ Project } />
                 <Route path={ routeCodes.REGISTERPROJECT }  component={ RegisterProject } />
+                <Route path={ routeCodes.PAGINATEPROJECTS } component={ PaginateProjects } />
                 <Route path='*'                             component={ NotFound } />
               </Switch>
             </div>

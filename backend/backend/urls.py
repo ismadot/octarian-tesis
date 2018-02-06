@@ -4,12 +4,12 @@ from django.conf import settings
 from api.views import *
 from django.contrib import admin
 from rest_framework import routers
-from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+
 '''
 router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 
 router.register(r'Projects',ProjectsViewSet)
-router.register(r'users', UserViewSet)
 '''
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
