@@ -5,7 +5,7 @@ import projects from 'reducers/projects';
 import auth from 'reducers/auth';
 import info from 'reducers/info';
 import app from 'reducers/app';
-import { persistReducer } from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web and AsyncStorage for react-native
 
 // redux persist is a library for data persist in store

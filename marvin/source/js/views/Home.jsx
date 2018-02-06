@@ -19,10 +19,10 @@ import bookImg from 'img/book2.jpg';
 import { postProjects } from 'actions/projects';
 
 @connect(state => ({
-  counter: state.app.get('counter'),
-  loadingAuth: state.auth.get('loadingAuth'),
-  errorAuth: state.auth.get('errorAuth'),
-  tokenAuth: state.auth.get('tokenAuth'),
+  //counter: state.app.get('counter'),
+  //loadingAuth: state.auth.get('loadingAuth'),
+  //errorAuth: state.auth.get('errorAuth'),
+  //tokenAuth: state.auth.get('tokenAuth'),
   loadingPostProjects: state.projects.get('loadingPostProjects'),
   errorPostProjects: state.projects.get('errorPostProjects'),
   dataPostProjects: state.projects.get('dataPostProjects'),      
@@ -32,9 +32,9 @@ import { postProjects } from 'actions/projects';
 export default class Home extends Component {
   static propTypes = {
     counter: PropTypes.number,
-    errorAuth: PropTypes.string,
-    loadingAuth: PropTypes.bool,
-    tokenAuth: PropTypes.object,
+    //errorAuth: PropTypes.string,
+    //loadingAuth: PropTypes.bool,
+    //tokenAuth: PropTypes.object,
     dataPostProjects    :PropTypes.object,
     errorPostProjects   :PropTypes.string,
     loadingPostProjects :PropTypes.bool,
@@ -67,9 +67,9 @@ export default class Home extends Component {
   render() {
     const {
       counter,
-      loadingAuth,
-      errorAuth,
-      tokenAuth,
+      //loadingAuth,
+      //errorAuth,
+      //tokenAuth,
       dataPostProjects,
       errorPostProjects,
       loadingPostProjects,

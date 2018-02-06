@@ -82,6 +82,7 @@ export default (serverSagas = null, sagaOptions = {}) => {
 
   // Return store only
   // But as an object for consistency
+    //store
   return {
     store: persistStore( store ),
   };
